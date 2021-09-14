@@ -1,0 +1,11 @@
+Analizar, diseñar y construir una aplicación de software que permita controlar las 
+ventas físicas y virtuales de una empresa de manufactura y hacerles el 
+correspondiente seguimiento. 
+Esta aplicación se realizará en un grupo de 5 personas y se usarán metodologías ágiles,
+en específico, SCRUM. Cada integrante deberá tener un rol específico dentro del grupo:
+    1. Desarrollador
+    2. Analista
+    3. Product Owner
+    4. Administrador de bases de datos
+    5. Scrum Master
+Los roles se irán rotando al paso de las semanas como se específico dentro del grupo. 
