@@ -15,3 +15,9 @@ Integrantes
     Anderson David Morales Chila
         Tengo 19 años y soy estudiante de tercer semestre de ingeniería de sistemas y 
         computación. Vivo en Bogotá y tengo conocimientos básicos en Python, Java y SQL.
+    
+    Juan Esteban Sanchez Venegas
+        Soy de Ibague- Tolima, tengo 23 años. tengo conocimentos en sql, python, java y php  
+        
+        
+    
