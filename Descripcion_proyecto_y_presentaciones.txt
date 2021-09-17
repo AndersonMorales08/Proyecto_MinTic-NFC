@@ -9,7 +9,21 @@ Descripción Proyecto
         3. Product Owner
         4. Administrador de bases de datos
         5. Scrum Master
-    Los roles se irán rotando al paso de las semanas como se específico dentro del grupo. 
+    Los roles se irán rotando al paso de las semanas como se específico dentro del grupo.
+
+    Para la realización del proyecto se utilizarán los lenguajes de programación: JavaScript
+    y TypeScript, con el siguiente stack tecnológico:
+        - Stack MERN:
+            * Mongo DB.
+            * Express Js.
+            * React Js.
+            * Node Js.
+        - HTML 5.
+        - CSS3.
+        - Plataforma de desarrolo para Backend (Node Js).
+        - OAuth2.
+        - Heroku.
+        - Git/GitHub.
 
 Integrantes
     Anderson David Morales Chila
