@@ -46,6 +46,9 @@ Integrantes
     
     Juan Esteban Sanchez Venegas
         Soy de Ibague- Tolima, tengo 23 años. tengo conocimentos en sql, python, java y php  
+
+    Carlos Alberto Reales Carpio
+        Diseñador grafico de 27 años de edad, vivo Sabanalarga Atlantico,  con conocimientos basicos en python, java, html, css, JavaScript. 
         
         
     
