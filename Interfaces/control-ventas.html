@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>NFC Motores - Gestion de Ventas</title>
+</head>
+<body>
+  
+    <div class="container-fluid bg-light">
+        <!--NAVBAR-->
+        <nav class="navbar navbar-expand-lg fixed-top bg-dark navbar-dark" style="opacity: 90%;">
+          <div class="container-fluid">                
+              <a class="navbar-brand px-lg-5" href="NFCRegistro.html"><img src="Sources/logo.jpg" height="60"/>NFC Motores</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                  aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ms-auto">
+                      <li class="nav-item mx-sm-2">
+                          <a class="nav-link" aria-current="page" href="NFCRegistro.html">Inicio</a>
+                      </li>
+                      <li class="nav-item dropdown mx-sm-2">
+                          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                              aria-expanded="false" id="navbarDropdorwn" href="#">Ventas</a>
+                          <ul class="dropdown-menu" aria-labelledby="navbarDropdorwn">
+                              <li><a class="dropdown-item" href="control-ventas.html">Registrar venta</a></li>
+                              <li><a class="dropdown-item" href="#">Listado ventas</a></li>
+                              <li><a class="dropdown-item" href="#">Busqueda ventas</a></li>
+                          </ul>
+                      </li>
+                      <li class="nav-item dropdown mx-sm-2">
+                          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                              aria-expanded="false" id="navbarDropdorwn" href="#">Productos</a>
+                          <ul class="dropdown-menu" aria-labelledby="navbarDropdorwn">
+                              <li><a class="dropdown-item" href="#">Registrar producto</a></li>
+                              <li><a class="dropdown-item" href="#">Listado productos</a></li>
+                              <li><a class="dropdown-item" href="#">Busqueda productos</a></li>
+                          </ul>
+                      </li>
+                      <li class="nav-item dropdown mx-sm-2">
+                          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                              aria-expanded="false" id="navbarDropdorwn" href="#">Usuarios</a>
+                          <ul class="dropdown-menu" aria-labelledby="navbarDropdorwn">
+                              <li><a class="dropdown-item" href="#">Listado usuarios</a></li>
+                          </ul>
+                      </li>
+                      <li class="nav-item dropdown mx-sm-2">
+                          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                              aria-expanded="false" id="navbarDropdorwn" href="#">Usuario: NFC</a>
+                          <ul class="dropdown-menu" aria-labelledby="navbarDropdorwn">
+                              <li><a class="dropdown-item" href="editarUsuario.html">Actualizar información</a></li>
+                              <li><a class="dropdown-item" href="index.html">Cerrar sesión</a></li>
+                          </ul>
+                      </li>
+
+                  </ul>
+                  <form class="d-flex ms-sm-5 px-lg-2">
+                      <input class="form-control me-2" type="search" placeholder="Escribe Aquí" aria-label="Search">
+                      <button class="btn btn-light" type="submit">Buscar</button>
+                  </form>
+              </div>
+          </div>
+      </nav>
+      </div>
+        <div class="container-fluid offset-1 col-8 col-md-6 offset-md-3 bg-light ">
+  
+            <section class="panel panel-default">
+          <div> 
+            <br><br><br><br><br>
+          <h1 class="titulo text-center">Control de Ventas</h1> 
+          </div> 
+          <div> 
+            <h2 class="titulo text-center">Venta N° #</h2>
+            <!-- Se agregara un contador para el numero de venta  -->
+          </div> 
+          <div class="cuerpo">
+            
+          <form  class="form-control-sm" role="form">
+          
+     
+             <div class="form-group">
+              <label for="name" class="col-8 form-label fw-bold">Modelo</label>
+              <div class="col-auto">
+                <select name="modelo" class="form-control form-label col-8 col-md-6">
+                  <option value="Mod_Default">Selecciona un Modelo</option>
+                  <option value="Sentra Sr">Sentra Sr</option>
+                  <option value="Mazda CX-9">Mazda CX-9</option>
+                  <option value="Chevrolet Equinox">Chevrolet Equinox</option>
+                </select>
+              </div>
+            </div> 
+            <div class="form-group">
+              <label for="name" class="col-8 form-label fw-bold">Precio</label>
+              <div class="col-auto">
+                <input type="text" class="form-control  col-8 col-md-6" name="precio" id="precio" placeholder="Precio">
+              </div>
+            </div> 
+            <div class="form-group">
+              <label for="about" class="form-label col-8 fw-bold">Descripcion</label>
+              <div class="col-auto">
+                <textarea class="form-control"></textarea>
+              </div>
+            </div> 
+            <div class="row">
+              <!-- PARA ELIGIR LA FECHA CON UN CALENDARIO HACE FALTA EL JAVASCRIP -->
+              <div class="col-8 col-sm-4 col-md-4"> 
+                <label class="form-label col-8 fw-bold" for="fecha-inicial">Fecha Inicial </label>
+                <input type="text" class="form-control col-8 col-md-3" name="fecha-inicial" id="fecha-inicial" placeholder="26/09/2021">
+              </div>
+              <div class="col-8 col-sm-4 col-md-4"> 
+                <label class="form-label col-8 fw-bold" for="fecha-final">Fecha Final </label>
+                <input type="text" class="form-control col-8 col-md-3" name="fecha-final" id="fecha-final" placeholder="15/10/2021">
+              </div>
+            </div> 
+            <div class="form-group">
+            <label for="encargado" class="col-8 form-label fw-bold">Encargado</label>
+            <div class="col-auto">
+              <select name="Encargado" class="form-control form-label">
+                <option value="Enc_Default">Seleccione el Encargado de la ventas</option>
+                <option value="Anderson">Anderson David Morales Chila</option>
+                <option value="CarlosJ">Carlos Javier López Durán</option>
+                <option value="Sandra">Sandra Patricia Osorio Correa</option>
+                <option value="Juan">Juan Esteban Sánchez Venegas</option>
+                <option value="CarlosA">Carlos Alberto Reales Carpio</option>
+              </select>
+            </div>
+            <hr>
+            <div class="form-group">
+              <div class="text-center">
+                <a href="#" class= "btn btn-lg btn-dark btn-block ">Enviar</a>
+                
+              </div>
+            </div> 
+          </form>
+            
+          </div>
+          </section>
+          
+            
+          </div> 
+</body>
+</html>
