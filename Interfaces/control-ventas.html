@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Gestion de Ventas</title>
+</head>
+<body>
+  
+    <div class="container-fluid bg-light">
+        <!--NAVBAR-->
+        <nav class="navbar navbar-expand-lg fixed-top bg-dark navbar-dark" style="opacity: 90%;">
+            <div class="container-fluid">
+              <img src="sources/logo.jpg" width="40" height="50">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-sm-2">
+                            <a class="nav-link" aria-current="page" href="#inicio">Inicio</a>
+                        </li>
+                        <li class="nav-item mx-sm-2">
+                            <a class="nav-link" href="#lista">Lista de ventas</a>
+                        </li>
+                        <li class="nav-item mx-sm-2">
+                            <a class="nav-link" href="#interfaz_productos">Agregar productos</a>
+                        </li>
+                        <li class="nav-item mx-sm-2">
+                            <a class="nav-link" href="#interfaz_usuarios">Usuarios</a>
+                        </li>
+
+                    </ul>
+                    
+                </div>
+            </div>
+        </nav>
+        </div>
+<br><br><br>
+        <div class="container-fluid offset-1 col-8 col-md-6 offset-md-3 bg-light ">
+  
+            <section class="panel panel-default">
+          <div> 
+          <h1 class="titulo text-center">Control de Ventas</h1> 
+          </div> 
+          <div> 
+            <h2 class="titulo text-center">Venta N° #</h2>
+            <!-- Se agregara un contador para el numero de venta  -->
+          </div> 
+          <div class="cuerpo">
+            
+          <form  class="form-control-sm" role="form">
+          
+     
+             <div class="form-group">
+              <label for="name" class="col-8 form-label fw-bold">Modelo</label>
+              <div class="col-auto">
+                <select name="modelo" class="form-control form-label col-8 col-md-6">
+                  <option value="Mod_Default">Selecciona un Modelo</option>
+                  <option value="Sentra Sr">Sentra Sr</option>
+                  <option value="Mazda CX-9">Mazda CX-9</option>
+                  <option value="Chevrolet Equinox">Chevrolet Equinox</option>
+                </select>
+              </div>
+            </div> 
+            <div class="form-group">
+              <label for="name" class="col-8 form-label fw-bold">Precio</label>
+              <div class="col-auto">
+                <input type="text" class="form-control  col-8 col-md-6" name="precio" id="precio" placeholder="Precio">
+              </div>
+            </div> 
+            <div class="form-group">
+              <label for="about" class="form-label col-8 fw-bold">Descripcion</label>
+              <div class="col-auto">
+                <textarea class="form-control"></textarea>
+              </div>
+            </div> 
+            <div class="row">
+              <!-- PARA ELIGIR LA FECHA CON UN CALENDARIO HACE FALTA EL JAVASCRIP -->
+              <div class="col-8 col-sm-4 col-md-4"> 
+                <label class="form-label col-8 fw-bold" for="fecha-inicial">Fecha Inicial </label>
+                <input type="text" class="form-control col-8 col-md-3" name="fecha-inicial" id="fecha-inicial" placeholder="26/09/2021">
+              </div>
+              <div class="col-8 col-sm-4 col-md-4"> 
+                <label class="form-label col-8 fw-bold" for="fecha-final">Fecha Final </label>
+                <input type="text" class="form-control col-8 col-md-3" name="fecha-final" id="fecha-final" placeholder="15/10/2021">
+              </div>
+            </div> 
+            <div class="form-group">
+            <label for="encargado" class="col-8 form-label fw-bold">Encargado</label>
+            <div class="col-auto">
+              <select name="Encargado" class="form-control form-label">
+                <option value="Enc_Default">Seleccione el Encargado de la ventas</option>
+                <option value="Anderson">Anderson David Morales Chila</option>
+                <option value="CarlosJ">Carlos Javier López Durán</option>
+                <option value="Sandra">Sandra Patricia Osorio Correa</option>
+                <option value="Juan">Juan Esteban Sánchez Venegas</option>
+                <option value="CarlosA">Carlos Alberto Reales Carpio</option>
+              </select>
+            </div>
+            <hr>
+            <div class="form-group">
+              <div class="text-center">
+                <a href="#" class= "btn btn-lg btn-dark btn-block ">Enviar</a>
+                
+              </div>
+            </div> 
+          </form>
+            
+          </div>
+          </section>
+          
+            
+          </div> 
+</body>
+</html>
