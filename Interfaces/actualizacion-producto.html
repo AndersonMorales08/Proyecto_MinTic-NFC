@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualización del producto</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="container-fluid bg-light">
+        <!--NAVBAR-->
+        <nav class="navbar navbar-expand-lg fixed-top bg-dark navbar-dark" style="opacity: 90%;">
+            <div class="container-fluid">
+                <div><img class="logo" src="Sources/NFC logo.png" alt="" srcset=""></div>
+                <a class="navbar-brand px-lg-5" href="NFCRegistro.html">NFC Motors</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-sm-2">
+                            <a class="nav-link" aria-current="page" href="NFCRegistro.html">Inicio</a>
+                        </li>
+                        <li class="nav-item dropdown mx-sm-2">
+                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false" id="navbarDropdorwn" href="#">Ventas</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdorwn">
+                                <li><a class="dropdown-item" href="control-ventas.html">Registrar venta</a></li>
+                                <li><a class="dropdown-item" href="#">Listado ventas</a></li>
+                                <li><a class="dropdown-item" href="#">Busqueda ventas</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown mx-sm-2">
+                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false" id="navbarDropdorwn" href="#">Productos</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdorwn">
+                                <li><a class="dropdown-item" href="#">Registrar producto</a></li>
+                                <li><a class="dropdown-item" href="#">Listado productos</a></li>
+                                <li><a class="dropdown-item" href="#">Busqueda productos</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown mx-sm-2">
+                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false" id="navbarDropdorwn" href="#">Usuarios</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdorwn">
+                                <li><a class="dropdown-item" href="#">Listado usuarios</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown mx-sm-2">
+                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false" id="navbarDropdorwn" href="#">Usuario: NFC</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdorwn">
+                                <li><a class="dropdown-item" href="editarUsuario.html">Actualizar información</a></li>
+                                <li><a class="dropdown-item" href="index.html">Cerrar sesión</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                    <form class="d-flex ms-sm-5 px-lg-2">
+                        <input class="form-control me-2" type="search" placeholder="Escribe Aquí" aria-label="Search">
+                        <button class="btn btn-light" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <br><br><br><br><br>
+        <div class="row">
+            <div class="offset-3 col-12 col-md-6 col-lg- 4">
+                <div class="card border-dark border-2">
+                    <div class="card-body">
+                        <div class="card-header bg-white rounded border">
+                            <h1 class="titulo text-center">Actualización de productos</h1>
+                        </div>
+                        <br>
+                        <h2 class="card-subtitle mb-2 text-muted text-center">N° Producto: Asd323fds</h2> 
+                        <form action="" method="POST">                               
+                            <br>
+                            <label class="form-label col-8 fw-bold" for="Precio">Precio</label>
+                            <div class="input-group">
+                                <input class="form-control" type="input" placeholder="Ingrese el precio" disabled id="precio">
+                                <button class="btn btn-outline-dark btn-lg"><img src="/Interfaces/Sources/edit2.png" alt="editar"></button>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label class="form-label col-8 fw-bold" for="desc">Descripción</label>
+                                <div class="input-group mb-3">
+                                    <textarea class="form-control" id="desc" disabled></textarea>
+                                    <button class="btn btn-outline-dark btn-lg"><img src="/Interfaces/Sources/edit2.png" alt="editar"></button>
+                                </div>
+                            </div>
+                            <br>
+                            <label class="form-label col-8 fw-bold" for="model">Modelo</label>
+                            <div class="input-group mb-3">
+                                <select name="modelo" class="form-control" id="model" disabled>
+                                    <option value="Mod_Default">Selecciona un Modelo</option>
+                                    <option value="Sentra Sr">Sentra Sr</option>
+                                    <option value="Mazda CX-9">Mazda CX-9</option>
+                                    <option value="Chevrolet Equinox">Chevrolet Equinox</option>
+                                </select>
+                                <button class="btn btn-outline-dark btn-lg"><img src="/Interfaces/Sources/edit2.png" alt="editar"></button>
+                            </div>
+                            <br>
+                            <label class="form-label col-8 fw-bold" for="state">Estado</label>
+                            <div class="input-group mb-3">
+                                <select class="form-control" id="state" disabled>
+                                    <option value="Mod_Default">Seleccione el estado</option>
+                                    <option value="disponible">Disponible</option>
+                                    <option value="No_disponible">No disponible</option>
+                                </select>
+                                <button class="btn btn-outline-dark btn-lg"><img src="/Interfaces/Sources/edit2.png" alt="editar"></button>
+                            </div>
+                            <br>
+                            <div class="text-center ">
+                                <a href="/Interfaces/confirmacion-registrar-producto.html" role="button" class="btn btn-dark btn-lg">Actualizar</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
