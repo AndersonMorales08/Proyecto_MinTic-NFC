@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="Sources/favicon.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -35,32 +36,32 @@
                             <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false" id="navbarDropdorwn" href="#">Ventas</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdorwn">
-                                <li><a class="dropdown-item" href="control-ventas.html">Registrar venta</a></li>
-                                <li><a class="dropdown-item" href="#">Listado ventas</a></li>
-                                <li><a class="dropdown-item" href="#">Busqueda ventas</a></li>
+                                <li><a class="dropdown-item" target="_blank" href="control-ventas.html">Registrar venta</a></li>
+                                <li><a class="dropdown-item" target="_blank" href="lista-ventas.html">Listado ventas</a></li>
+                                <li><a class="dropdown-item" target="_blank" href="control-ventas.html">Busqueda ventas</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown mx-sm-2">
                             <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false" id="navbarDropdorwn" href="#">Productos</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdorwn">
-                                <li><a class="dropdown-item" href="#">Registrar producto</a></li>
-                                <li><a class="dropdown-item" href="#">Listado productos</a></li>
-                                <li><a class="dropdown-item" href="#">Busqueda productos</a></li>
+                                <li><a class="dropdown-item" target="_blank" href="registro-producto.html">Registrar producto</a></li>
+                                <li><a class="dropdown-item" target="_blank" href="actualizacion-producto.html">Actualizar producto</a></li>
+                                <li><a class="dropdown-item" target="_blank" href="invVehiculos.html">Control productos</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown mx-sm-2">
                             <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false" id="navbarDropdorwn" href="#">Usuarios</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdorwn">
-                                <li><a class="dropdown-item" href="#">Listado usuarios</a></li>
+                                <li><a class="dropdown-item" target="_blank" href="">Listado usuarios</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown mx-sm-2">
                             <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false" id="navbarDropdorwn" href="#">Usuario: NFC</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdorwn">
-                                <li><a class="dropdown-item" href="editarUsuario.html">Actualizar información</a></li>
+                                <li><a class="dropdown-item" target="_blank" href="editarUsuario.html">Actualizar información</a></li>
                                 <li><a class="dropdown-item" href="index.html">Cerrar sesión</a></li>
                             </ul>
                         </li>
@@ -129,44 +130,159 @@
             </div>
         </div>
         <!--SEPARADOR SECCIONES-->
-        <section class="bg-dark text-light" id="productos">
+        <section class="pt-3 pb-5" id="vehiculos">
             <div>
-                <div class="p-5 pb-2" style="height:500px">
-                    <h2>Productos</h2>
-                    <br>
-                    <h4>Linea para el Hogar</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus ex excepturi qui assumenda
-                        iure
-                        architecto
-                        enim nostrum voluptatibus? Est ad corporis ducimus officia eveniet nemo iure natus dignissimos
-                        eius
-                        blanditiis.
-                    </p>
-                    <br>
-
-                    <h4>Proximamente</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus ex excepturi qui assumenda
-                        iure
-                        architecto
-                        enim nostrum voluptatibus? Est ad corporis ducimus officia eveniet nemo iure natus dignissimos
-                        eius
-                        blanditiis.
-                    </p>
-                    <div class="row m-3">
-                        <div class="col-4 d-flex align-items-center justify-content-center"><a href="#"><img
-                                    class="rounded-3" src="corp.jpeg" alt="" srcset=""></a></div>
-                        <div class="col-4 d-flex align-items-center justify-content-center"><a href="#"><img
-                                    class="rounded-3" src="corp.jpeg" alt="" srcset=""></a></div>
-                        <div class="col-4 d-flex align-items-center justify-content-center"><a href="#"><img
-                                    class="rounded-3" src="corp.jpeg" alt="" srcset=""></a></div>
-                    </div>
-                    <div class="row m-3">
-                        <div class="col-4 d-flex align-items-center justify-content-center"><a href="#"><img
-                                    class="rounded-3" src="corp.jpeg" alt="" srcset=""></a></div>
-                        <div class="col-4 d-flex align-items-center justify-content-center"><a href="#"><img
-                                    class="rounded-3" src="corp.jpeg" alt="" srcset=""></a></div>
-                        <div class="col-4 d-flex align-items-center justify-content-center"><a href="#"><img
-                                    class="rounded-3" src="corp.jpeg" alt="" srcset=""></a></div>
+                <div class="p-5" style="height:510px">
+                    <h2>Vehiculos</h2>
+                    <ul class="nav nav-pills py-1 bg-dark" style="height: 48px;" id="pills-tab" role="tablist">
+                        <li class="nav-item mx-sm-2" role="presentation">
+                            <button class="btn btn-dark" id="pills-carro-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-carro" type="button" role="tab" aria-controls="pills-carro"
+                                aria-selected="true">Carros</button>
+                        </li>
+                        <li class="nav-item mx-sm-2" role="presentation">
+                            <button class="btn btn-dark" id="pills-camioneta-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-camioneta" type="button" role="tab"
+                                aria-controls="pills-camioneta" aria-selected="false">Camionetas</button>
+                        </li>
+                        <li class="nav-item mx-sm-2" role="presentation">
+                            <button class="btn btn-dark" id="pills-suv-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-suv" type="button" role="tab" aria-controls="pills-suv"
+                                aria-selected="false">SUV'S</button>
+                        </li>
+                        <li class="nav-item mx-sm-2" role="presentation">
+                            <button class="btn btn-dark" id="pills-deportivo-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-deportivo" type="button" role="tab"
+                                aria-controls="pills-deportivo" aria-selected="false">Deportivos</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-carro" role="tabpanel"
+                            aria-labelledby="pills-carro-tab">
+                            <div class="row m-3">
+                                <div class="col-4 d-flex align-items-center justify-content-center"><a href="#"><img
+                                            class="rounded-3 articulo" src="Sources/Carro1.jpg" alt="" srcset=""></a>
+                                </div>
+                                <div class="col-4 d-flex align-items-center justify-content-center"><a href="#"><img
+                                            class="rounded-3 articulo" src="Sources/Carro1.jpg" alt="" srcset=""></a>
+                                </div>
+                                <div class="col-4 d-flex align-items-center justify-content-center"><a href="#"><img
+                                            class="rounded-3 articulo" src="Sources/Carro1.jpg" alt="" srcset=""></a>
+                                </div>
+                            </div>
+                            <div class="row m-3">
+                                <div class="col-4 d-flex align-items-center justify-content-center">
+                                    <p> sedan compacto se destaca su consumo de combustible que puede llegar en
+                                        carretera a 70 km por galón-. el Beat tiene un corazón de 1.2L, 4 cilindros, que
+                                        eroga 80 caballos
+                                        de fuerza y va acoplado a una transmisión mecánica de 5 relaciones. </p>
+                                </div>
+                                <div class="col-4 d-flex align-items-center justify-content-center">
+                                    <p>sedan compacto se destaca su consumo de combustible que puede llegar en
+                                        carretera a 70 km por galón-. el Beat tiene un corazón de 1.2L, 4 cilindros, que
+                                        eroga 80 caballos
+                                        de fuerza y va acoplado a una transmisión mecánica de 5 relaciones.</p>
+                                </div>
+                                <div class="col-4 d-flex align-items-center justify-content-center">
+                                    <p>sedan compacto se destaca su consumo de combustible que puede llegar en
+                                        carretera a 70 km por galón-. el Beat tiene un corazón de 1.2L, 4 cilindros, que
+                                        eroga 80 caballos
+                                        de fuerza y va acoplado a una transmisión mecánica de 5 relaciones.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-camioneta" role="tabpanel"
+                            aria-labelledby="pills-camioneta-tab">
+                            <div class="row m-3">
+                                <div class="col-4 d-flex align-items-center justify-content-center"><a href="#"><img
+                                            class="rounded-3 articulo" src="Sources/camioneta1.jpg" alt=""
+                                            srcset=""></a></div>
+                                <div class="col-4 d-flex align-items-center justify-content-center"><a href="#"><img
+                                            class="rounded-3 articulo" src="Sources/camioneta1.jpg" alt=""
+                                            srcset=""></a></div>
+                                <div class="col-4 d-flex align-items-center justify-content-center"><a href="#"><img
+                                            class="rounded-3 articulo" src="Sources/camioneta1.jpg" alt=""
+                                            srcset=""></a></div>
+                            </div>
+                            <div class="row m-3">
+                                <div class="col-4 d-flex align-items-center justify-content-center">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim dicta dolorum
+                                        beatae, illo commodi a maiores impedit minus et debitis consequuntur blanditiis
+                                        quaerat, sit architecto nesciunt minima ullam, placeat nam.</p>
+                                </div>
+                                <div class="col-4 d-flex align-items-center justify-content-center">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim dicta dolorum
+                                        beatae, illo commodi a maiores impedit minus et debitis consequuntur blanditiis
+                                        quaerat, sit architecto nesciunt minima ullam, placeat nam.</p>
+                                </div>
+                                <div class="col-4 d-flex align-items-center justify-content-center">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim dicta dolorum
+                                        beatae, illo commodi a maiores impedit minus et debitis consequuntur blanditiis
+                                        quaerat, sit architecto nesciunt minima ullam, placeat nam.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-suv" role="tabpanel" aria-labelledby="pills-suv-tab">
+                            <div class="row m-3">
+                                <div class="col-4 d-flex align-items-center justify-content-center"><a href="#"><img
+                                            class="rounded-3 articulo" src="Sources/suv1.jpg" alt="" srcset=""></a>
+                                </div>
+                                <div class="col-4 d-flex align-items-center justify-content-center"><a href="#"><img
+                                            class="rounded-3 articulo" src="Sources/suv1.jpg" alt="" srcset=""></a>
+                                </div>
+                                <div class="col-4 d-flex align-items-center justify-content-center"><a href="#"><img
+                                            class="rounded-3 articulo" src="Sources/suv1.jpg" alt="" srcset=""></a>
+                                </div>
+                            </div>
+                            <div class="row m-3">
+                                <div class="col-4 d-flex align-items-center justify-content-center">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim dicta dolorum
+                                        beatae, illo commodi a maiores impedit minus et debitis consequuntur blanditiis
+                                        quaerat, sit architecto nesciunt minima ullam, placeat nam.</p>
+                                </div>
+                                <div class="col-4 d-flex align-items-center justify-content-center">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim dicta dolorum
+                                        beatae, illo commodi a maiores impedit minus et debitis consequuntur blanditiis
+                                        quaerat, sit architecto nesciunt minima ullam, placeat nam.</p>
+                                </div>
+                                <div class="col-4 d-flex align-items-center justify-content-center">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim dicta dolorum
+                                        beatae, illo commodi a maiores impedit minus et debitis consequuntur blanditiis
+                                        quaerat, sit architecto nesciunt minima ullam, placeat nam.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-deportivo" role="tabpanel"
+                            aria-labelledby="pills-deportivo-tab">
+                            <div class="row m-3">
+                                <div class="col-4 d-flex align-items-center justify-content-center"><a href="#"><img
+                                            class="rounded-3 articulo" src="Sources/deportivo1.jpg" alt=""
+                                            srcset=""></a></div>
+                                <div class="col-4 d-flex align-items-center justify-content-center"><a href="#"><img
+                                            class="rounded-3 articulo" src="Sources/GoogleIcon.png" alt=""
+                                            srcset=""></a></div>
+                                <div class="col-4 d-flex align-items-center justify-content-center"><a href="#"><img
+                                            class="rounded-3 articulo" src="Sources/GoogleIcon.png" alt=""
+                                            srcset=""></a></div>
+                            </div>
+                            <div class="row m-3">
+                                <div class="col-4 d-flex align-items-center justify-content-center">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim dicta dolorum
+                                        beatae, illo commodi a maiores impedit minus et debitis consequuntur blanditiis
+                                        quaerat, sit architecto nesciunt minima ullam, placeat nam.</p>
+                                </div>
+                                <div class="col-4 d-flex align-items-center justify-content-center">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim dicta dolorum
+                                        beatae, illo commodi a maiores impedit minus et debitis consequuntur blanditiis
+                                        quaerat, sit architecto nesciunt minima ullam, placeat nam.</p>
+                                </div>
+                                <div class="col-4 d-flex align-items-center justify-content-center">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim dicta dolorum
+                                        beatae, illo commodi a maiores impedit minus et debitis consequuntur blanditiis
+                                        quaerat, sit architecto nesciunt minima ullam, placeat nam.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="pb-5 d-flex justify-content-center align-items-center">
@@ -174,14 +290,16 @@
                 </div>
             </div>
         </section>
-        <section class="bg-dark d-flex align-items-center justify-content-center">
-            <div>
-                <h2 class="text-center my-3 text-light" id="contacto">Contactanos</h2>
-                <footer>
+        <section id="contacto" class="bg-dark d-flex align-items-center  text-light">
+            <footer>
+                <div class="w-75 mx-auto m-5">
+                    <h3>CONTACTO</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aspernatur dolore,
                         reprehenderit quae voluptates ex non voluptatum omnis quia debitis recusandae! Veritatis,
                         tempore hic asperiores enim omnis iusto nisi quae?</p>
-                </footer>
+                </div>
+            </footer>
+        </section>
         </section>
     </div>
 </body>
