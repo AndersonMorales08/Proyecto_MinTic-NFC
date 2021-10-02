@@ -28,60 +28,48 @@
           
      
              <div class="form-group">
-              <label for="name" class="col-8 form-label fw-bold">Modelo</label>
+              <label for="id-vehiculo" class="col-8 form-label fw-bold">Identificador Vehiculo</label>
               <div class="col-auto">
-                <select name="modelo" class="form-control form-label col-8 col-md-6">
-                  <option value="Mod_Default">Selecciona un Modelo</option>
-                  <option value="Sentra Sr">Sentra Sr</option>
-                  <option value="Mazda CX-9">Mazda CX-9</option>
-                  <option value="Chevrolet Equinox">Chevrolet Equinox</option>
-                </select>
+                <input type="text" class="form-control  col-8 col-md-6" name="id-vehiculo" id="id-vehiculo" placeholder="Identificador Vehiculo">
               </div>
             </div> 
             <div class="form-group">
-              <label for="precio" class="col-8 form-label fw-bold">Precio</label>
+              <label for="valor-total" class="col-8 form-label fw-bold">Valor Total</label>
               <div class="col-auto">
-                <input type="text" class="form-control  col-8 col-md-6" name="precio" id="precio" placeholder="Precio">
-              </div>
-            </div> 
-             <div class="form-group">
-              <label for="metodo" class="col-8 form-label fw-bold">Metodo de pago</label>
-              <div class="col-auto">
-                <select name="metodo" class="form-control form-label col-8 col-md-6">
-                  <option value="Met_Default">Selecciona un Metodo de pago</option>
-                  <option value="Efectivo">Efectivo</option>
-                  <option value="Tarjeta">Tarjeta de Credito</option>
-                  <option value="Cheque">Cheque</option>
-                </select>
+                <input type="text" class="form-control  col-8 col-md-6" name="valor-total" id="valor-total" placeholder="Valor Total">
               </div>
             </div> 
             <div class="form-group">
-              <label for="modalidad" class="col-8 form-label fw-bold">Modalidad de pago</label>
+              <label for="cantidad" class="col-8 form-label fw-bold">Cantidad</label>
               <div class="col-auto">
-                <select name="modelo" class="form-control form-label col-8 col-md-6">
-                  <option value="Pago_Default">Selecciona una Modalidad de pago</option>
-                  <option value="Cuotas">Cuotas</option>
-                  <option value="Pago">Pago Total</option>
-                </select>
+                <input type="text" class="form-control  col-8 col-md-6" name="cantidad" id="cantidad" placeholder="Cantidad">
               </div>
             </div> 
             <div class="form-group">
-              <label for="about" class="form-label col-8 fw-bold">Descripcion</label>
+              <label for="precio" class="col-8 form-label fw-bold">Precio Unitario</label>
               <div class="col-auto">
-                <textarea class="form-control"></textarea>
+                <input type="text" class="form-control  col-8 col-md-6" name="precioU" id="precioU" placeholder="Precio Unitario">
+              </div>
+            </div> 
+            <div class="form-group">
+              <label for="documento" class="col-8 form-label fw-bold">Documento de Identificacion</label>
+              <div class="col-auto">
+                <input type="text" class="form-control  col-8 col-md-6" name="documento" id="documento" placeholder="Documento de Identificacion">
+              </div>
+            </div> 
+            <div class="form-group">
+              <label for="nombreC" class="col-8 form-label fw-bold">Nombre del Cliente</label>
+              <div class="col-auto">
+                <input type="text" class="form-control  col-8 col-md-6" name="nombreC" id="nombreC" placeholder="Nombre del Cliente">
               </div>
             </div> 
             <div class="row">
               <!-- PARA ELIGIR LA FECHA CON UN CALENDARIO HACE FALTA EL JAVASCRIP -->
               <div class="col-8 col-sm-4 col-md-4"> 
-                <label class="form-label col-8 fw-bold" for="fecha-inicial">Fecha Inicial </label>
-                <input type="text" class="form-control col-8 col-md-3" name="fecha-inicial" id="fecha-inicial" placeholder="26/09/2021">
+                <label class="form-label col-8 fw-bold" for="fecha-inicial">Fecha de la Venta </label>
+                <input type="text" class="form-control col-8 col-md-3" name="fecha" id="fecha" placeholder="DD/MM/AAAA">
               </div>
-              <div class="col-8 col-sm-4 col-md-4"> 
-                <label class="form-label col-8 fw-bold" for="fecha-final">Fecha Final </label>
-                <input type="text" class="form-control col-8 col-md-3" name="fecha-final" id="fecha-final" placeholder="15/10/2021">
-              </div>
-            </div> 
+
             <div class="form-group">
             <label for="encargado" class="col-8 form-label fw-bold">Encargado</label>
             <div class="col-auto">
@@ -94,10 +82,23 @@
                 <option value="CarlosA">Carlos Alberto Reales Carpio</option>
               </select>
             </div>
+            <div class="form-group">
+              <label for="modalidad" class="col-8 form-label fw-bold">Estado de Venta</label>
+              <div class="col-auto">
+                <select name="estado" class="form-control form-label col-8 col-md-6">
+                  <option value="estado_Default">Selecciona el estado de la venta</option>
+                  <option value="en-proceso">En Proceso</option>
+                  <option value="cancelada">Cancelada</option>
+                  <option value="entregada">Entregada</option>
+                </select>
+              </div>
+            </div> 
             <hr>
             <div class="form-group">
               <div class="text-center">
-                <a href="#" class= "btn btn-lg btn-dark btn-block ">Enviar</a>
+
+                <button type="button" onclick="guardar();" class="btn btn-dark">Guardar</button>
+
                 
               </div>
             </div> 
