@@ -16,74 +16,12 @@
 
 <body>
     <div class="container-fluid bg-light">
-        <!--NAVBAR-->
-        <nav class="navbar navbar-expand-lg fixed-top bg-dark navbar-dark" style="opacity: 90%;">
-            <div class="container-fluid">
-                <div><img class="logo" src="Sources/NFC logo.png" alt="" srcset=""></div>
-                <a class="navbar-brand px-lg-5" href="NFCRegistro.html">NFC Motors</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-sm-2">
-                            <a class="nav-link" aria-current="page" href="NFCRegistro.html">Inicio</a>
-                        </li>
-                        <li class="nav-item dropdown mx-sm-2">
-                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false" id="navbarDropdorwn" href="#">Ventas</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdorwn">
-                                <li><a class="dropdown-item" href="control-ventas.html">Registrar venta</a></li>
-                                <li><a class="dropdown-item" href="#">Listado ventas</a></li>
-                                <li><a class="dropdown-item" href="#">Busqueda ventas</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown mx-sm-2">
-                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false" id="navbarDropdorwn" href="#">Productos</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdorwn">
-                                <li><a class="dropdown-item" href="#">Registrar producto</a></li>
-                                <li><a class="dropdown-item" href="#">Listado productos</a></li>
-                                <li><a class="dropdown-item" href="#">Busqueda productos</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown mx-sm-2">
-                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false" id="navbarDropdorwn" href="#">Usuarios</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdorwn">
-                                <li><a class="dropdown-item" href="#">Listado usuarios</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown mx-sm-2">
-                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false" id="navbarDropdorwn" href="#">Usuario: NFC</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdorwn">
-                                <li><a class="dropdown-item" href="editarUsuario.html">Actualizar información</a></li>
-                                <li><a class="dropdown-item" href="index.html">Cerrar sesión</a></li>
-                            </ul>
-                        </li>
-
-                    </ul>
-                    <form class="d-flex ms-sm-5 px-lg-2">
-                        <input class="form-control me-2" type="search" placeholder="Escribe Aquí" aria-label="Search">
-                        <button class="btn btn-light" type="submit">Buscar</button>
-                    </form>
-                </div>
-            </div>
-        </nav>
         <!--SEPARADOR SECCIONES-->
-        <section class="bg-dark text-light" id="usuarios">
-            <div>
-                <div class="p-5 pb-2" style="height:500px">
-                    <br>
-                    <br>
+        <section id="usuarios">
+            <div class="bg-light d-flex vh-100 justify-content-center align-items-center">
+                <div class="w-50 c p-5 border rounded-3">
                     <h2>Actualización usuarios</h2>
-                    <br>
                     <h4>Usuario:  NFC </h4>
-                    <br>
-                    <br>
                     <label for="estados">Estado:</label>
                     <select id="estados" class="form-control me-2" >
                         <option value="">Seleccione..</option>
@@ -100,7 +38,7 @@
                     <br/>
                     <br/>
                     <a href="confirmarEditarUsuario.html">
-                        <button class="btn btn-light" type="submit">Actualizar usuario</button>
+                        <button class="btn btn-dark" type="submit">Actualizar usuario</button>
                      </a>
                                          
                 </div>

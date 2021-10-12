@@ -1,6 +1,6 @@
 *{
     margin: 0;
-    padding: 0
+    padding: 0;
 }
 .articulo{
     height: 200px;
@@ -11,4 +11,11 @@
 }
 .logo{
     height:50px;
+}
+.paddtop{
+    padding-top: 66px;
+}
+
+.corpcolor{
+    background-color: black;
 }
