@@ -9,7 +9,6 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Switch>
-          <Route component={Home} />
           <Route exact path={"/Home"} component={Home} />
           <Route component={NotFound} />
         </Switch>
