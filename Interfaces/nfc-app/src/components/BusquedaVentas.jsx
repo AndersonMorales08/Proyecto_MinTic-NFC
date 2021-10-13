@@ -3,13 +3,12 @@ import React from 'react'
 export const BusquedaVentas = () => {
     return (
         <>
-            <div className="mt-5 container-fluid bg-light">
-                <br />
+            <div className="bg-light">
                 <div>
                     <h1 className="titulo text-center">NFC Busqueda de Ventas</h1>
                 </div>
                 <section className="d-flex justify-content-center pt-3" id="Consulta">
-                    <div className="d-flex w-75 ps-2">
+                    <div className="d-flex w-100 ps-2">
                         <select className="form-select w-50" aria-label="Default select example">
                             <option selected>Seleccione criterio de consulta</option>
                             <option value={1}>ID</option>
@@ -28,7 +27,7 @@ export const BusquedaVentas = () => {
                         </form>
                     </div>
                 </section>
-                <div className="container table-responsive pt-4 w-75">
+                <div className="container table-responsive pt-4 w-100">
                     <table className="table table-bordered table-hover  table-hover table-dark">
                         <thead className="thead-dark">
                             <tr>

@@ -2,9 +2,6 @@
 import React, { useState } from 'react'
 import { BarInicio } from './BarInicio'
 import { BarLogin } from './BarLogin'
-// import { initializeApp } from 'firebase/app';
-// import { getAuth, onAuthStateChanged, getRedirectResult } from 'firebase/auth';
-// import { } from 'firebase/auth';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 export const NavBar = () => {
@@ -22,7 +19,7 @@ export const NavBar = () => {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <BarInicio />
+                        <BarLogin />
                     </div>
                 </div>
 

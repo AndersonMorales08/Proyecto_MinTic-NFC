@@ -3,13 +3,12 @@ import React from 'react'
 export const BusquedaProducto = () => {
     return (
         <>
-            <div className="container-fluid vh-100 bg-dark mt-5 p-2">
-                <div className="container-fluid bg-light w-100 h-100 pt-4 rounded-3">
+                <div className="container-fluid bg-light rounded-3">
                     <div className="d-flex justify-content-center text-center">
                         <h3>NFC lista de Vehiculos</h3>
                     </div>
                     <section id="Consulta">
-                        <div className="d-flex w-100 px-5">
+                        <div className="d-flex">
                             <select className="form-select w-50" aria-label="Default select example">
                                 <option selected>Seleccione metodo de consulta</option>
                                 <option value={1}>Modelo</option>
@@ -21,7 +20,7 @@ export const BusquedaProducto = () => {
                                 <option value={7}>Mod_Motor</option>
                                 <option value={8}>Id_Vehiculo</option>
                             </select>
-                            <form className="w-50 d-flex form-group px-2" action>
+                            <form className="w-50 d-flex form-group" action>
                                 <input className="form-control me-2" type="search" placeholder="Escribe Aquí" aria-label="Search" />
                                 <button className="btn btn-dark me-2" type="submit">Buscar</button>
                                 <input type="button" className="btn btn-dark" defaultValue="+" />
@@ -29,7 +28,7 @@ export const BusquedaProducto = () => {
                         </div>
                     </section>
                     <section>
-                        <div className="px-5 table-responsive my-3">
+                        <div className="table-responsive my-3">
                             <table className="table table-bordered table-hover  table-hover table-light">
                                 <thead className="table-dark text-light">
                                     <tr>
@@ -171,7 +170,6 @@ export const BusquedaProducto = () => {
                         </div>
                     </section>
                 </div>
-            </div>
 
 
         </>

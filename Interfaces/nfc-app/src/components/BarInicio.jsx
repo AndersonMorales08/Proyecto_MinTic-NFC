@@ -119,9 +119,6 @@ export const BarInicio = () => {
                         </div>
                     </div>
                 </div>
-
-
-
             </Modal>
 
         </>
