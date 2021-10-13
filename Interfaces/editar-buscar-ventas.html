@@ -108,7 +108,7 @@
             <div class="form-group">
             <label for="encargado" class="col-8 form-label fw-bold">Encargado</label>
             <div class="col-auto">
-              <select name="Encargado" class="form-control form-label">
+              <select name="Encargado" id="encargado" class="form-control form-label">
                 <option value="Enc_Default">Seleccione el Encargado de la ventas</option>
                 <option value="Anderson">Anderson David Morales Chila</option>
                 <option value="CarlosJ">Carlos Javier López Durán</option>
@@ -120,7 +120,7 @@
             <div class="form-group">
               <label for="modalidad" class="col-8 form-label fw-bold">Estado de Venta</label>
               <div class="col-auto">
-                <select name="estado" class="form-control form-label col-8 col-md-6">
+                <select name="estado" id="estado" class="form-control form-label col-8 col-md-6">
                   <option value="estado_Default">Selecciona el estado de la venta</option>
                   <option value="en-proceso">En Proceso</option>
                   <option value="cancelada">Cancelada</option>
@@ -132,7 +132,7 @@
             <div class="form-group">
               <div class="text-center">
                 <!-- Solo puede editar el administrador, cuando no sea admin se mostrara un mensaje al darle al boton -->
-                <button type="button" onclick="editar();" class="btn btn-dark">Editar</button>
+                <button type="button"  id="editar" class="btn btn-dark">Editar</button>
 
                 
               </div>
@@ -144,5 +144,16 @@
           
             
           </div>  
+                
+          <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-app-compat.js"></script>
+          
+          <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore-compat.js"></script>
+     
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"
+                  integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ=="
+                  crossorigin="anonymous"
+                  referrerpolicy="no-referrer"></script>
+
+          <script src="/nfc-app/src/buscar-editar.js"></script>
 </body>
 </html>
