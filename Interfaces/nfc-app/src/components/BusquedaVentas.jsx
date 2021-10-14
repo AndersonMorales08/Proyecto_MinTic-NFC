@@ -1,6 +1,26 @@
 import React from 'react'
+import { actualizarDocumentoDatabase, consultarDatabase, consultarDocumentoDatabase, crearUsuario, datosUsuario, eliminarDocumentoDatabase, guardarDatabase, loginUsuario, logOutUsuario, usuario } from './firebaseconf';
 
 export const BusquedaVentas = () => {
+    // Obtener todos los documentos de la colleccion
+    consultarDatabase('usuarios')
+    // console.log(await consultarDatabase('usuarios'));
+
+    // Obtener un documento id=CEqaCqjBFnI0SQKRj0tI
+    // consultarDocumentoDatabase('usuarios', 'CEqaCqjBFnI0SQKRj0tI')
+
+    const usuarioDos = {
+        nombre: 'Martha',
+        edad: 15
+    }
+
+    // Actualizacion documento  id=CEqaCqjBFnI0SQKRj0tI
+    // actualizarDocumentoDatabase('usuarios', 'CEqaCqjBFnI0SQKRj0tI', usuarioDos)
+
+    // Eliminar documento  id=CEqaCqjBFnI0SQKRj0tI
+    // eliminarDocumentoDatabase('usuarios', 'CEqaCqjBFnI0SQKRj0tI', usuarioDos)
+
+
     return (
         <>
             <div className="bg-light">

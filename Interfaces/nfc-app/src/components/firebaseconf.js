@@ -9,7 +9,7 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, si
 // Metodos de interaccion con la base de datos
 import { addDoc, collection, getDocs, query, getDoc, doc, updateDoc, deleteDoc } from 'firebase/firestore'
 
-var firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyA3WmeZZWAZz8xPCbuTWNru15kyp-OA7k8",
     authDomain: "proyecto-min.firebaseapp.com",
     databaseURL: "https://proyecto-min-default-rtdb.firebaseio.com",
@@ -18,16 +18,15 @@ var firebaseConfig = {
     messagingSenderId: "436033150422",
     appId: "1:436033150422:web:c7bb932a9164ce80fc5877",
     measurementId: "G-CFE503S5BN"
-  };
+};
 
 initializeApp(firebaseConfig);
 const database = getFirestore();
 const auth = getAuth();
 export let usuario;
 
-// Guardar base de datos
+// // Guardar base de datos
 export const guardarDatabase = async (nombreColeccion, data) => {
-
     try {
         const respuesta = await addDoc(collection(database, nombreColeccion), data)
         console.log(respuesta);
@@ -35,7 +34,6 @@ export const guardarDatabase = async (nombreColeccion, data) => {
     } catch (e) {
         throw new Error(e)
     }
-
 }
 
 // getAll()
