@@ -9,7 +9,7 @@ export const BarInicio = () => {
         console.log('Entro');
 
         // Creacion Usuario
-        crearUsuario(email, password)
+        // crearUsuario(email, password)
 
         // // Login
         // await loginUsuario("","")
