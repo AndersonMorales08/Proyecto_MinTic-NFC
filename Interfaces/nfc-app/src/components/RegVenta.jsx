@@ -1,12 +1,24 @@
 import React from 'react'
+import { actualizarDocumentoDatabase, consultarDatabase, consultarDocumentoDatabase, crearUsuario, datosUsuario, eliminarDocumentoDatabase, guardarDatabase, loginUsuario, logOutUsuario, usuario } from './firebaseconf';
 
 export const RegVenta = () => {
+
+    const usuario = {
+        nombre : 'Pedro',
+        edad : 30
+      }
+      //guardar en base de datos 
+      guardarDatabase('usuarios', usuario)
+
+     
+
+
+
     return (
         <>
-            <div className="mt-5 container-fluid offset-1 col-8 col-md-6 offset-md-3 bg-light ">
+            <div className="w-100  bg-light p-3 ">
                 <section className="panel panel-default">
                     <div>
-                        <br />
                         <h1 className="titulo text-center">Control de Ventas</h1>
                     </div>
                     <div>

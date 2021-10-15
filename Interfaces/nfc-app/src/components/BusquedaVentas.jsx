@@ -1,15 +1,34 @@
 import React from 'react'
+import { actualizarDocumentoDatabase, consultarDatabase, consultarDocumentoDatabase, crearUsuario, datosUsuario, eliminarDocumentoDatabase, guardarDatabase, loginUsuario, logOutUsuario, usuario } from './firebaseconf';
 
 export const BusquedaVentas = () => {
+    // Obtener todos los documentos de la colleccion
+    consultarDatabase('usuarios')
+    // console.log(await consultarDatabase('usuarios'));
+
+    // Obtener un documento id=CEqaCqjBFnI0SQKRj0tI
+    // consultarDocumentoDatabase('usuarios', 'CEqaCqjBFnI0SQKRj0tI')
+
+    const usuarioDos = {
+        nombre: 'Martha',
+        edad: 15
+    }
+
+    // Actualizacion documento  id=CEqaCqjBFnI0SQKRj0tI
+    // actualizarDocumentoDatabase('usuarios', 'CEqaCqjBFnI0SQKRj0tI', usuarioDos)
+
+    // Eliminar documento  id=CEqaCqjBFnI0SQKRj0tI
+    // eliminarDocumentoDatabase('usuarios', 'CEqaCqjBFnI0SQKRj0tI', usuarioDos)
+
+
     return (
         <>
-            <div className="mt-5 container-fluid bg-light">
-                <br />
+            <div className="bg-light">
                 <div>
                     <h1 className="titulo text-center">NFC Busqueda de Ventas</h1>
                 </div>
                 <section className="d-flex justify-content-center pt-3" id="Consulta">
-                    <div className="d-flex w-75 ps-2">
+                    <div className="d-flex w-100 ps-2">
                         <select className="form-select w-50" aria-label="Default select example">
                             <option selected>Seleccione criterio de consulta</option>
                             <option value={1}>ID</option>
@@ -28,7 +47,7 @@ export const BusquedaVentas = () => {
                         </form>
                     </div>
                 </section>
-                <div className="container table-responsive pt-4 w-75">
+                <div className="container table-responsive pt-4 w-100">
                     <table className="table table-bordered table-hover  table-hover table-dark">
                         <thead className="thead-dark">
                             <tr>
