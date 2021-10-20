@@ -70,14 +70,14 @@ export const BarInicio = () => {
                                 <h5>NFC Motors</h5>
                             </div>
                             <br />
-                            <form onSubmit={guardarDatos}>
+                            <form>
                                 {/* usuario */}
                                 <label htmlFor="email">Correo Electrónico:</label>
-                                <input value={email} className="form-control" type="email" placeholder="Ingresa tu email" />
+                                <input className="form-control" type="email" placeholder="Ingresa tu email" />
                                 <br />
                                 {/* contraseña */}
                                 <label htmlFor="username">Contraseña:</label>
-                                <input value={password} className="form-control" type="password" placeholder="Ingresa tu contraseña" />
+                                <input className="form-control" type="password" placeholder="Ingresa tu contraseña" />
                                 <div className="my-3">
                                     {/* boton */}
                                     <input className="btn btn-dark form-control" type="submit" defaultValue="Iniciar Sesión" href="#" />
