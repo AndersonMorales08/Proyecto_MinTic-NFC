@@ -1,18 +1,19 @@
 import React from 'react'
+import { useEffect, useState } from 'react'
 import { actualizarDocumentoDatabase, consultarDatabase, consultarDocumentoDatabase, crearUsuario, datosUsuario, eliminarDocumentoDatabase, guardarDatabase, loginUsuario, logOutUsuario, usuario } from './firebaseconf';
 
 export const BusquedaVentas = () => {
     // Obtener todos los documentos de la colleccion
-    consultarDatabase('usuarios')
+    // consultarDatabase('usuarios')
     // console.log(await consultarDatabase('usuarios'));
 
     // Obtener un documento id=CEqaCqjBFnI0SQKRj0tI
     // consultarDocumentoDatabase('usuarios', 'CEqaCqjBFnI0SQKRj0tI')
 
-    const usuarioDos = {
-        nombre: 'Martha',
-        edad: 15
-    }
+    // const usuarioDos = {
+    //     nombre: 'Martha',
+    //     edad: 15
+    // }
 
     // Actualizacion documento  id=CEqaCqjBFnI0SQKRj0tI
     // actualizarDocumentoDatabase('usuarios', 'CEqaCqjBFnI0SQKRj0tI', usuarioDos)
@@ -20,6 +21,25 @@ export const BusquedaVentas = () => {
     // Eliminar documento  id=CEqaCqjBFnI0SQKRj0tI
     // eliminarDocumentoDatabase('usuarios', 'CEqaCqjBFnI0SQKRj0tI', usuarioDos)
 
+    // const handleCargarDatos = async () => {
+    //     const listaTemporal = await consultarDatabase('lista-Ventas')
+    //     console.log(listaTemporal);
+    //     setListaVentas(listaTemporal)
+    //   }
+
+    const [listaVentas, setListaVentas] = useState([])
+
+    useEffect(() => {
+        cargarDatos()
+    }, [])
+
+    const cargarDatos = async () => {
+        // console.log('Entro..!');
+        const listaTemporal = await consultarDatabase('lista-Ventas')
+        // console.log(listaTemporal);
+        setListaVentas(listaTemporal)
+    }
+    // onClick={handleCargarDatos}
 
     return (
         <>
@@ -42,7 +62,7 @@ export const BusquedaVentas = () => {
                         </select>
                         <form className="w-50 d-flex form-group px-2" action>
                             <input className="form-control me-2" type="search" placeholder="Escribe Aquí" aria-label="Search" />
-                            <button className="btn btn-dark me-2" type="submit">Buscar</button>
+                            <button  className="btn btn-dark me-2" type="submit">Buscar</button>
                             <input type="button" className="btn btn-dark" defaultValue="+" />
                         </form>
                     </div>
@@ -56,90 +76,29 @@ export const BusquedaVentas = () => {
                                 <th scope="col">ID_Vehic</th>
                                 <th scope="col">Cantidad</th>
                                 <th scope="col">V_Unitario</th>
-                                <th scope="col">Fec_venc</th>
+                                <th scope="col">Fecha</th>
                                 <th scope="col">ID_Cliente</th>
                                 <th scope="col">Encargado</th>
                                 <th scope="col">Estado</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>96.990.000</td>
-                                <td>12345678</td>
-                                <td>1</td>
-                                <td>96.990.000</td>
-                                <td>27/09/2021</td>
-                                <td>97470859</td>
-                                <td>Carlos Javier López Durán</td>
-                                <td>En proceso</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>123.000.000</td>
-                                <td>987654321</td>
-                                <td>1</td>
-                                <td>123.000.000</td>
-                                <td>28/12/2021</td>
-                                <td>52036580</td>
-                                <td>Patricia Osorio Correa</td>
-                                <td>En proceso</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td />
-                                <td />
-                                <td />
-                                <td />
-                                <td />
-                                <td />
-                                <td />
-                                <td />
-                            </tr>
-                            <tr>
-                                <th scope="row">4</th>
-                                <td />
-                                <td />
-                                <td />
-                                <td />
-                                <td />
-                                <td />
-                                <td />
-                                <td />
-                            </tr>
-                            <tr>
-                                <th scope="row">5</th>
-                                <td />
-                                <td />
-                                <td />
-                                <td />
-                                <td />
-                                <td />
-                                <td />
-                                <td />
-                            </tr>
-                            <tr>
-                                <th scope="row">6</th>
-                                <td />
-                                <td />
-                                <td />
-                                <td />
-                                <td />
-                                <td />
-                                <td />
-                                <td />
-                            </tr>
-                            <tr>
-                                <th scope="row">7</th>
-                                <td />
-                                <td />
-                                <td />
-                                <td />
-                                <td />
-                                <td />
-                                <td />
-                                <td />
-                            </tr>
+                            {
+                                listaVentas.map((venta, index) => {
+                                    return (
+                                        <tr key={venta.id}>
+                                            <th scope="row">{index + 1}</th>
+                                            <td>{venta.V_Venta}</td>
+                                            <td>{venta.ID_Vehic}</td>
+                                            <td>{venta.Cantidad}</td>
+                                            <td>{venta.V_Unitario}</td>
+                                            <td>{venta.Fecha}</td>
+                                            <td>{venta.ID_Cliente}</td>
+                                            <td>{venta.Encargado}</td>
+                                            <td>{venta.Estado}</td>
+                                        </tr>)
+                                })
+                            }
                         </tbody>
                     </table>
                 </div>
