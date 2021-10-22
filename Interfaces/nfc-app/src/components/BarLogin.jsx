@@ -108,7 +108,7 @@ export const BarLogin = () => {
                 </div>
                 <BusquedaVentas />
             </Modal>
-            <Modal className='' isOpen={rp}>
+            <Modal className='modal-lg' isOpen={rp}>
                 <div className='d-flex bg-light justify-content-end'>
                     <button className='btn btn-light' onClick={closeInterfaz}>X</button>
                 </div>

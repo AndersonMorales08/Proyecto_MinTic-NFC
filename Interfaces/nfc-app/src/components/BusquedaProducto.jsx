@@ -35,7 +35,7 @@ export const BusquedaProducto = () => {
 
     const cargarDatos = async () => {
         // console.log('Entro..!');
-        const listaTemporal = await consultarDatabase('lista-Productos')
+        const listaTemporal = await consultarDatabase('lista-productos')
         // console.log(listaTemporal);
         setListaProductos(listaTemporal)
     }
@@ -53,12 +53,11 @@ export const BusquedaProducto = () => {
                             <option selected>Seleccione metodo de consulta</option>
                             <option value={1}>Modelo</option>
                             <option value={2}>Fecha de Registro</option>
-                            <option value={3}>Fecha de Venta</option>
-                            <option value={4}>Estado</option>
-                            <option value={5}>Cod_Agencia</option>
-                            <option value={6}>Color</option>
-                            <option value={7}>Mod_Motor</option>
-                            <option value={8}>Id_Vehiculo</option>
+                            <option value={3}>Estado</option>
+                            <option value={4}>Cod_Agencia</option>
+                            <option value={5}>Color</option>
+                            <option value={6}>Mod_Motor</option>
+                            <option value={7}>Id_Vehiculo</option>
                         </select>
                         <form className="w-50 d-flex form-group" action>
                             <input className="form-control me-2" type="search" placeholder="Escribe Aquí" aria-label="Search" />
@@ -88,16 +87,17 @@ export const BusquedaProducto = () => {
                                 {
                                     listaProductos.map((producto, index) => {
                                         return (
-                                            <tr key={producto.Id_Vehiculo}>
+                                            <tr key={producto.id}>
                                                 <th scope="row">{index + 1}</th>
-                                                <td>{producto.Unidades}</td>
-                                                <td>{producto.Modelo}</td>
-                                                <td>{producto.Fecha_Registro}</td>
-                                                <td>{producto.Fecha_Venta}</td>
-                                                <td>{producto.Estado}</td>
-                                                <td>{producto.Cod_Agencia}</td>
-                                                <td>{producto.Color}</td>
-                                                <td>{producto.Mod_Motor}</td>
+                                                <td>{producto.cantidad}</td>
+                                                <td>{producto.modelo}</td>
+                                                <td>{producto.fechaRegistro}</td>
+                                                <td>{producto.fechaVenta}</td>
+                                                <td>{producto.estado}</td>
+                                                <td>{producto.codAgencia}</td>
+                                                <td>{producto.color}</td>
+                                                <td>{producto.motor}</td>
+                                                <td>{producto.id}</td>
                                             </tr>)
                                     })
                                 }

@@ -35,7 +35,7 @@ export const BusquedaVentas = () => {
 
     const cargarDatos = async () => {
         // console.log('Entro..!');
-        const listaTemporal = await consultarDatabase('lista-Ventas')
+        const listaTemporal = await consultarDatabase('lista-ventas')
         // console.log(listaTemporal);
         setListaVentas(listaTemporal)
     }
@@ -77,7 +77,7 @@ export const BusquedaVentas = () => {
                                 <th scope="col">Cantidad</th>
                                 <th scope="col">V_Unitario</th>
                                 <th scope="col">Fecha</th>
-                                <th scope="col">ID_Cliente</th>
+                                <th scope="col">Cliente</th>
                                 <th scope="col">Encargado</th>
                                 <th scope="col">Estado</th>
                             </tr>
@@ -88,14 +88,14 @@ export const BusquedaVentas = () => {
                                     return (
                                         <tr key={venta.id}>
                                             <th scope="row">{index + 1}</th>
-                                            <td>{venta.V_Venta}</td>
-                                            <td>{venta.ID_Vehic}</td>
-                                            <td>{venta.Cantidad}</td>
-                                            <td>{venta.V_Unitario}</td>
-                                            <td>{venta.Fecha}</td>
-                                            <td>{venta.ID_Cliente}</td>
-                                            <td>{venta.Encargado}</td>
-                                            <td>{venta.Estado}</td>
+                                            <td>{venta.valorTotal}</td>
+                                            <td>{venta.identificadorVehiculo}</td>
+                                            <td>{venta.cantidad}</td>
+                                            <td>{venta.precioUnitario}</td>
+                                            <td>{venta.fechaVenta}</td>
+                                            <td>{venta.nombreCliente}</td>
+                                            <td>{venta.encargado}</td>
+                                            <td>{venta.estadoVenta}</td>
                                         </tr>)
                                 })
                             }
