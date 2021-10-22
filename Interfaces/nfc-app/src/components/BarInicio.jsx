@@ -4,23 +4,50 @@ import { actualizarDocumentoDatabase, consultarDatabase, consultarDocumentoDatab
 
 
 export const BarInicio = () => {
+    const [sesionState, setSesionState] = useState(false)
 
-    const handleClick = async () => {
-        console.log('Entro');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-        // Creacion Usuario
-        // crearUsuario(email, password)
-
-        // // Login
-        // await loginUsuario("","")
-        // console.log('datos usuario: ', usuario);
-
-        //  salir -> LogOut
-        // logOutUsuario()
-
-        //  Datos Usuario
-        // datosUsuario()
+    const validacionCampos = ()=>{
+        if(email === '' || password === ''){
+            return false;
+        }
+        return true;
     }
+
+    const handleFormulario = (e)=> {
+        e.preventDefault();
+        if (validacionCampos()){
+            const usuario = {
+                email: email,
+                password: password
+            }
+            console.log(usuario);
+            loginUsuario(email,password);
+            sesionState(true);
+        } else {
+            console.log('¡Debe llenar todos los campos!');
+        }
+    }
+
+
+    // const handleClick = async () => {
+    //     console.log('Entro');
+
+    //     // Creacion Usuario
+    //     // crearUsuario(email, password)
+
+    //     // // Login
+    //     // await loginUsuario("","")
+    //     // console.log('datos usuario: ', usuario);
+
+    //     //  salir -> LogOut
+    //     // logOutUsuario()
+
+    //     //  Datos Usuario
+    //     // datosUsuario()
+    // }
 
 
     const [state, setState] = useState(false)
@@ -70,14 +97,14 @@ export const BarInicio = () => {
                             <h5>NFC Motors</h5>
                         </div>
                         <br />
-                        <form>
+                        <form onSubmit={handleFormulario}>
                             {/* usuario */}
                             <label htmlFor="email">Correo Electrónico:</label>
-                            <input className="form-control" type="email" placeholder="Ingresa tu email" />
+                            <input className="form-control" onChange={(e)=> {setEmail(e.target.value)}} type="email" placeholder="Ingresa tu email" />
                             <br />
                             {/* contraseña */}
                             <label htmlFor="username">Contraseña:</label>
-                            <input className="form-control" type="password" placeholder="Ingresa tu contraseña" />
+                            <input className="form-control" onChange={(e)=> {setPassword(e.target.value)}} type="password" placeholder="Ingresa tu contraseña" />
                             <div className="my-3 pb-3">
                                 {/* boton */}
                                 <input className="btn btn-dark form-control" type="submit" Value="Iniciar Sesión" href="#" />
