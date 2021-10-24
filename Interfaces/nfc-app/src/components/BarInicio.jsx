@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
-import { Modal } from 'reactstrap';
-import { actualizarDocumentoDatabase, consultarDatabase, consultarDocumentoDatabase, crearUsuario, datosUsuario, eliminarDocumentoDatabase, guardarDatabase, loginUsuario, logOutUsuario, usuario } from './firebaseconf';
+import { Button, Modal } from 'reactstrap';
+import { loginUsuario} from './firebaseconf';
 
 
 export const BarInicio = () => {
-    const [sesionState, setSesionState] = useState(false)
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -25,7 +24,7 @@ export const BarInicio = () => {
             }
             console.log(usuario);
             loginUsuario(email,password);
-            setSesionState(true);
+            closeLogin()
         } else {
             alert('¡Debe llenar todos los campos!');
         }
@@ -81,7 +80,7 @@ export const BarInicio = () => {
                     </li>
                 </ul>
                 <form className="d-flex ms-sm-5 px-lg-2">
-                    <input className="me-2" type="search" placeholder="Escribe Aquí" aria-label="Search" />
+                    <input className="me-2 rounded" type="search" placeholder="Escribe Aquí" aria-label="Search" />
                     <button className="btn btn-light" type="submit">Buscar</button>
                 </form>
             </div>
@@ -89,7 +88,7 @@ export const BarInicio = () => {
             <Modal className='w-25' isOpen={state}>
                 <div className="align-items-center">
                     <div className='d-flex justify-content-end'>
-                        <button className='btn btn-light' onClick={closeLogin} >X</button>
+                        <button className='btn' onClick={closeLogin} >X</button>
                     </div>
                     <div className="px-5" id="login">
                         <div className="text-center">
@@ -107,7 +106,7 @@ export const BarInicio = () => {
                             <input className="form-control" onChange={(e)=> {setPassword(e.target.value)}} type="password" placeholder="Ingresa tu contraseña" />
                             <div className="my-3 pb-3">
                                 {/* boton */}
-                                <input className="btn btn-dark form-control" type="submit" Value="Iniciar Sesión" href="#" />
+                            <button  className="btn btn-dark form-control" href="/user" type="submit">Ingresar</button>
                             </div>
                         </form>
                         {/* <div className="mx-auto d-flex justify-content-center" style={{ width: 50 }}>

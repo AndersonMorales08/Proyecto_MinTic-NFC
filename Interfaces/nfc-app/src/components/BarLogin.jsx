@@ -7,6 +7,7 @@ import { ActProducto } from './ActProducto'
 import { BusquedaProducto } from './BusquedaProducto'
 import { ListaUsuarios } from './ListaUsuarios'
 import { ActUsuario } from './ActUsuario'
+import { logOutUsuario } from './firebaseconf';
 
 
 export const BarLogin = () => {
@@ -54,9 +55,6 @@ export const BarLogin = () => {
         <>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav ms-auto">
-                    <li className="nav-item mx-sm-2">
-                        <a className="nav-link" aria-current="page" href="NFCRegistro.html">Inicio</a>
-                    </li>
                     <li className="nav-item dropdown mx-sm-2">
                         <a className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false" id="navbarDropdorwn" href="#">Ventas</a>
@@ -86,7 +84,7 @@ export const BarLogin = () => {
                             aria-expanded="false" id="navbarDropdorwn" href="#">Usuario: NFC</a>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdorwn">
                             <li onClick={handleIterfazau}><a className="dropdown-item">Actualizar información</a></li>
-                            <li><a className="dropdown-item">Cerrar sesión</a></li>
+                            <li onClick={logOutUsuario}><a href="/home" className="dropdown-item">Cerrar sesión</a></li>
                         </ul>
                     </li>
 
@@ -138,8 +136,6 @@ export const BarLogin = () => {
                 </div>
                 <ActUsuario />
             </Modal>
-
-
         </>
     )
 }

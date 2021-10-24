@@ -15,6 +15,7 @@ function App() {
           <Route exact path={"/home"} component={Home} />
           <Route exact path={"/user"} component={UserDashBoard} />
           {/* <Route component={NotFound} /> */}
+          <Route exact path={""} component={Home} />
         </Switch>
       </BrowserRouter>
     </div>

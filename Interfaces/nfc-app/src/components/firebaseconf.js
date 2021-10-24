@@ -24,6 +24,7 @@ initializeApp(firebaseConfig);
 const database = getFirestore();
 const auth = getAuth();
 export let usuario;
+export var sesionState =false; 
 
 // // Guardar base de datos
 export const guardarDatabase = async (nombreColeccion, data) => {
@@ -173,10 +174,12 @@ onAuthStateChanged(auth, (user) => {
 
     if (user) {
         usuario = user
+        sesionState=true
         console.log('El usuario logueado');
     } else {
         console.log('El usuario ya no esta logueado');
-        usuario = undefined
+        usuario = undefined;
+        sesionState=false;
     }
 
 })
