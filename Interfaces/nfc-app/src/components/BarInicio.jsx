@@ -25,9 +25,9 @@ export const BarInicio = () => {
             }
             console.log(usuario);
             loginUsuario(email,password);
-            sesionState(true);
+            setSesionState(true);
         } else {
-            console.log('¡Debe llenar todos los campos!');
+            alert('¡Debe llenar todos los campos!');
         }
     }
 
@@ -64,7 +64,7 @@ export const BarInicio = () => {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav ms-auto">
                     <li className="nav-item mx-sm-2">
-                        <a className="nav-link" aria-current="page" href="#">Inicio</a>
+                        <a className="nav-link" aria-current="page" href="/home">Inicio</a>
                     </li>
                     <li className="nav-item mx-sm-2">
                         <a className="nav-link" href="#">Vehiculos</a>

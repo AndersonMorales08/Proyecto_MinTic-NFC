@@ -8,7 +8,7 @@ import { FooterSection } from '../components/FooterSection'
 export const Home = () => {
     return (
         <>
-            <NavBar />
+            {/* <NavBar /> */}
             <Caroussel />
             <FirstSection />
             <FooterSection />
