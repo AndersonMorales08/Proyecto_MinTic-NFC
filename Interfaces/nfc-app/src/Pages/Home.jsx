@@ -8,10 +8,10 @@ import { FooterSection } from '../components/FooterSection'
 export const Home = () => {
     return (
         <>
-            <NavBar />
-            <Caroussel />
-            <FirstSection />
-            <FooterSection />
+            <NavBar/>
+            <Caroussel/>
+            <FirstSection id="vehiculos" />
+            <FooterSection id="nosotros" />
         </>
     )
 }

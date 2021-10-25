@@ -6,7 +6,7 @@ import { BarInicio } from './BarInicio'
 export const NavBar = () => {
     return (
         <>
-            <nav className="navbar navbar-expand-xl fixed-top bg-dark navbar-dark">
+            <nav className="navbar fixed-top navbar-expand-xl bg-dark navbar-dark">
                 <div className="container-fluid">
                     <div><img className="logo" src="Sources/NFC logo.png" alt="" srcSet="" /></div>
                     <a className="navbar-brand ps-3" href="/home">NFC Motors</a>

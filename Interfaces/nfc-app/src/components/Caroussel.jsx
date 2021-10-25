@@ -3,7 +3,7 @@ import React from 'react'
 export const Caroussel = () => {
     return (
         <>
-            <div className="d-block d-sm-block navbar-expand carousel-dark bg-light" style={{height: 650}} id="inicio">
+            <div className="d-block d-sm-block navbar-expand carousel-light bg-light" style={{height: 570,paddingTop:56}} id="inicio">
                 <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
                     <div className="carousel-indicators">
                         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active"
@@ -12,37 +12,27 @@ export const Caroussel = () => {
                             aria-label="Slide 2"></button>
                         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
                             aria-label="Slide 3"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
-                            aria-label="Slide 4"></button>
                     </div>
                     <div className="carousel-inner">
                         <div className="carousel-item active">
-
-                            <img src="Sources/portada.jpg" className="d-block w-100" style={{height: 570}} alt="..." />
+                            <img src="./images/portada.jpg" className="d-block w-100" style={{height: 570}} alt="..." />
                                 <div className="carousel-caption d-none d-md-block">
                                     <h5>First slide label</h5>
                                     <p>Some representative placeholder content for the first slide.</p>
                                 </div>
                         </div>
                         <div className="carousel-item">
-                            <img src="Sources/2.jpg" className="d-block w-100" style={{height: 570}} alt="..." />
+                            <img src="./images/2.jpg" className="d-block w-100" style={{height: 570}} alt="..." />
                                 <div className="carousel-caption d-none d-md-block">
                                     <h5>Second slide label</h5>
                                     <p>Some representative placeholder content for the second slide.</p>
                                 </div>
                         </div>
                         <div className="carousel-item">
-                            <img src="Sources/3.jpg" className="d-block w-100" style={{height: 570}} alt="..." />
+                            <img src="./images/3.jpg" className="d-block w-100" style={{height: 570}} alt="..." />
                                 <div className="carousel-caption d-none d-md-block">
                                     <h5>Third slide label</h5>
                                     <p>Some representative placeholder content for the third slide.</p>
-                                </div>
-                        </div>
-                        <div className="carousel-item">
-                            <img src="corp.jpeg" className="d-block w-100" style={{height: 570}} alt="..."/>
-                                <div className="carousel-caption d-none d-md-block">
-                                    <h5>Four slide label</h5>
-                                    <p>Some representative placeholder content for the Four slide.</p>
                                 </div>
                         </div>
                     </div>

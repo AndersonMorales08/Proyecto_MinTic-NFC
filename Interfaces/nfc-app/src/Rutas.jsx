@@ -34,12 +34,7 @@ function Rutas() {
     return firebaseUser !== false ? (
         // Segundo
         <Router>
-            {/* Primero */}
             <App usuario={firebaseUser} />
-            <div className="container mt-3">
-                <Switch>
-                </Switch>
-            </div>
         </Router>
     )
         :
