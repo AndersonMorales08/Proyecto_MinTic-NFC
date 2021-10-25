@@ -5,6 +5,7 @@ import { UserDashBoard } from './Pages/UserDashBoard';
 import { sesionState } from './components/firebaseconf';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import { useState } from 'react';
+import { RegistroUsuario } from './components/RegistroUsuario';
 
 
 
@@ -27,6 +28,14 @@ export function App() {
       {
         sesionControl()
       }
+      {/* <RegistroUsuario/> */}
+      <BrowserRouter>
+        <Switch>
+          <Route exact path={"/home"} component={Home} />
+          <Route exact path={"/user"} component={UserDashBoard} />
+          {/* <Route component={NotFound} /> */}
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }

@@ -110,7 +110,6 @@ export const crearUsuario = async (email, password) => {
             id: credencialesUsuario.user.uid,
             email: credencialesUsuario.user.email
         }
-        guardarDatabase('listaUsuarios', user)
         return user
     } catch (e) {
         throw new Error(e)
