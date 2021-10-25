@@ -57,7 +57,7 @@ export const UserPanel = () => {
 
     return (
         <>
-            <div className="d-flex">
+            <div className="d-flex bg-dark">
                 <div className="text-light d-flex align-items-center m-0 p-0"><a className="navbar-brand text-light ps-3" href="/user">NFC Motors</a></div>
 
                 <div className="container d-flex me-0 justify-content-end">
