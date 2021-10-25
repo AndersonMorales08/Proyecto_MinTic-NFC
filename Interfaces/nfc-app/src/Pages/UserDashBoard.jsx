@@ -1,15 +1,18 @@
 import React from 'react'
-import { NavBar } from '../components/NavBar'
+import { UserPanel } from '../components/UserPanel'
 import { Caroussel } from '../components/Caroussel'
 import { FirstSection } from '../components/FirstSection'
+import { FooterSection } from '../components/FooterSection'
+
 
 
 export const UserDashBoard = () => {
     return (
         <>
-            <NavBar />
+            <UserPanel />
             <Caroussel />
             <FirstSection />
+            <FooterSection />
         </>
     )
 }

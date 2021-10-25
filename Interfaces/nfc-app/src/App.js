@@ -1,23 +1,32 @@
 
 // import './App.css';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Home } from './Pages/Home';
 import { UserDashBoard } from './Pages/UserDashBoard';
+import { sesionState } from './components/firebaseconf';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { useState } from 'react';
 
 
 
-function App() {
+export function App() {
+
+  function sesionControl() {
+    let nav =<Home />
+    if (sesionState == true) {
+        nav = <UserDashBoard />
+    }
+    else {
+        nav = <Home />
+    }
+    return nav
+}
+
   
   return (
     <div className="App">
-      <BrowserRouter>
-        <Switch>
-          <Route exact path={"/home"} component={Home} />
-          <Route exact path={"/user"} component={UserDashBoard} />
-          {/* <Route component={NotFound} /> */}
-          <Route exact path={""} component={Home} />
-        </Switch>
-      </BrowserRouter>
+      {
+        sesionControl()
+      }
     </div>
   );
 }

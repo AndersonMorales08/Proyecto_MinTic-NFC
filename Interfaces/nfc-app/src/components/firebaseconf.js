@@ -21,8 +21,8 @@ const firebaseConfig = {
 };
 
 initializeApp(firebaseConfig);
-const database = getFirestore();
-const auth = getAuth();
+export const database = getFirestore();
+export const auth = getAuth();
 export let usuario;
 export var sesionState =false; 
 
@@ -141,8 +141,6 @@ export const loginUsuario = async (email, password) => {
 export const logOutUsuario = async () => {
     try {
         const respuesta = await signOut(auth)
-        console.log(respuesta);
-        console.log('Me sali...!');
     } catch (e) {
         throw new Error(e)
     }
