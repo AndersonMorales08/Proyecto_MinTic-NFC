@@ -28,14 +28,6 @@ export function App() {
       {
         sesionControl()
       }
-      {/* <RegistroUsuario/> */}
-      <BrowserRouter>
-        <Switch>
-          <Route exact path={"/home"} component={Home} />
-          <Route exact path={"/user"} component={UserDashBoard} />
-          {/* <Route component={NotFound} /> */}
-        </Switch>
-      </BrowserRouter>
     </div>
   );
 }
