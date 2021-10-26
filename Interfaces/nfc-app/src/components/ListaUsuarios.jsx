@@ -1,47 +1,36 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
+import { ActUsuario } from './ActUsuario';
 import { actualizarDocumentoDatabase, consultarDatabase, consultarDocumentoDatabase, crearUsuario, datosUsuario, eliminarDocumentoDatabase, guardarDatabase, loginUsuario, logOutUsuario, usuario } from './firebaseconf';
 
 export const ListaUsuarios = () => {
-    // Obtener todos los documentos de la colleccion
-    // consultarDatabase('usuarios')
-    // console.log(await consultarDatabase('usuarios'));
-
-    // Obtener un documento id=CEqaCqjBFnI0SQKRj0tI
-    // consultarDocumentoDatabase('usuarios', 'CEqaCqjBFnI0SQKRj0tI')
-
-    // const usuarioDos = {
-    //     nombre: 'Martha',
-    //     edad: 15
-    // }
-
-    // Actualizacion documento  id=CEqaCqjBFnI0SQKRj0tI
-    // actualizarDocumentoDatabase('usuarios', 'CEqaCqjBFnI0SQKRj0tI', usuarioDos)
-
-    // Eliminar documento  id=CEqaCqjBFnI0SQKRj0tI
-    // eliminarDocumentoDatabase('usuarios', 'CEqaCqjBFnI0SQKRj0tI', usuarioDos)
-
-    // const handleCargarDatos = async () => {
-    //     const listaTemporal = await consultarDatabase('lista-Ventas')
-    //     console.log(listaTemporal);
-    //     setListaVentas(listaTemporal)
-    //   }
-
     const [listaUsuarios, setListaUsuarios] = useState([])
+    const[state, setState] = useState(false);
+    const[id, setId] = useState('');
 
     useEffect(() => {
+        console.log(state);
         cargarDatos()
     }, [])
 
     const cargarDatos = async () => {
-        // console.log('Entro..!');
-        const listaTemporal = await consultarDatabase('lista-Usuarios')
-        // console.log(listaTemporal);
+        const listaTemporal = await consultarDatabase('lista-usuarios')
         setListaUsuarios(listaTemporal)
     }
+
+    const handleState = ()=> {
+        setState(!state);
+    }
+
+    const changeModal = (idUser)=> {
+        setId(idUser)
+        handleState();
+    }
+
     // onClick={handleCargarDatos}
     return (
         <>
+           {state ? <ActUsuario userId={id}/>:
             <div className="bg-light pb-3">
                 <div>
                     <h1 className="titulo text-center">NFC Busqueda de Usuarios</h1>
@@ -74,11 +63,13 @@ export const ListaUsuarios = () => {
                         <tbody>
                             {
                                 listaUsuarios.map((usuario, index) => {
+                                    // setId(usuario.id);
+                                    // console.log(id);
                                     return (
-                                        <tr key={usuario.id}>
+                                        <tr key={usuario.id} onClick={()=>changeModal(usuario.id)}>
                                             <th scope="row">{index + 1}</th>
                                             <td>{usuario.email}</td>
-                                            <td>{usuario.rol}</td>
+                                            <td>{usuario.rol === null ? 'Indefinido': usuario.rol}</td>
                                             <td>{usuario.estado}</td>
                                         </tr>)
                                 })
@@ -87,7 +78,7 @@ export const ListaUsuarios = () => {
                         </tbody>
                     </table>
                 </div>
-            </div>
+            </div>}
 
 
         </>

@@ -44,13 +44,13 @@ export const consultarDatabase = async (nombreColeccion) => {
         // console.log(respuesta);
 
         const coleccionDatos = respuesta.docs.map((documento) => {
-            // console.log(documento);
-            // console.log(documento.data());
+            console.log(documento);
+            console.log(documento.data());
             const documentoTemporal = {
                 id: documento.id,
                 ...documento.data()
             }
-            // console.log(documentoTemporal);
+            console.log(documentoTemporal);
             return documentoTemporal
         })
 
@@ -71,8 +71,6 @@ export const consultarDocumentoDatabase = async (nombreColeccion, id) => {
             id: respuesta.id,
             ...respuesta.data()
         }
-
-        console.log(documentoTemporal);
         return documentoTemporal
     } catch (e) {
         throw new Error(e)
