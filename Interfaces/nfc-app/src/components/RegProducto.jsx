@@ -38,11 +38,10 @@ export const RegProducto = () => {
                 color: color,
                 motor: motor,
             }
-            console.log(producto);
             guardarDatabase('lista-productos', producto)
             alert("El producto se registro correctamente")
         } else {
-            console.log('¡Debe llenar todos los campos!');
+            alert.log('¡Debe llenar todos los campos!');
         }
     }
 

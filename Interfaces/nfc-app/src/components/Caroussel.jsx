@@ -3,7 +3,7 @@ import React from 'react'
 export const Caroussel = () => {
     return (
         <>
-            <div className="d-block d-sm-block navbar-expand carousel-light bg-light" style={{height: 570}} id="inicio">
+            <div className="d-block d-sm-block navbar-expand carousel-light bg-light" style={{height: 570,marginTop:56}} id="inicio">
                 <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
                     <div className="carousel-indicators">
                         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active"

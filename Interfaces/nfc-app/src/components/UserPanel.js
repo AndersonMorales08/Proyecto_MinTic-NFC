@@ -59,15 +59,17 @@ export const UserPanel = () => {
         <>
             <div class="d-flex bg-transparent fixed-top">
                 <div class="fixed-top d-flex bg-dark">
-                    <div class="container m-0 p-0 d-flex justify-content-start">
-                        <a class="btn btn-dark form-control w-25 fixed-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    <div class="container m-0 p-0 w-25 d-flex justify-content-start align-items-center">
+                        <a class="btn btn-dark form-control my-2"  data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                             Menu
                         </a>
                     </div>
-                    <div class="text-light d-flex align-items-center justify-content-start "><a className="navbar-brand text-light ps-3" href="/user">NFC Motors</a></div>
+                    <div class="text-light d-flex w-75 justify-content-end my-2">
+                        <a className="navbar-brand text-light ps-3" href="/user">NFC Motors</a>
+                    </div>
                 </div>
                 <div class="w-25 bg-dark">
-                    <div class="collapse pt-4" id="collapseExample" >
+                    <div class="collapse pt-5" id="collapseExample" >
                         <div className="accordion bg-dark" id="accordionExample">
                             <div className="accordion-item">
                                 <h2 className="accordion-header" id="headingOne">
@@ -75,7 +77,7 @@ export const UserPanel = () => {
                                         Ventas
                                     </button>
                                 </h2>
-                                <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                     <div className="accordion-body px-0">
                                         <a onClick={handleIterfazrv} className="dropdown-item" >Registrar venta</a>
                                         <a onClick={handleIterfazbv} className="dropdown-item" >Listado ventas</a>
@@ -110,7 +112,7 @@ export const UserPanel = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="mt-3 bg-dark">
+                        <div className="bg-dark">
                             {<NavLink
                                 className="btn btn-outline-light form-control"
                                 onClick={handleLogOut}
