@@ -26,7 +26,7 @@ export const RegProducto = () => {
         e.preventDefault();
         if (validacionCampos()) {
             const producto = {
-                id: v4(),
+                idv: v4(),
                 cantidad: Number(cantidad),
                 modelo: modelo,
                 descripcion: descripcion,
@@ -140,9 +140,9 @@ export const RegProducto = () => {
                                     <option value="Mod_Default">Seleccione Color</option>
                                     <option value="Negro">Negro</option>
                                     <option value="Blanco">Blanco</option>
-                                    <option value="Blanco">Rojo</option>
-                                    <option value="Blanco">Azul</option>
-                                    <option value="Blanco">Gris</option>
+                                    <option value="Rojo">Rojo</option>
+                                    <option value="Azul">Azul</option>
+                                    <option value="Gris">Gris</option>
                                 </select>
                             </div>
                             <div className="w-50 ps-3">
