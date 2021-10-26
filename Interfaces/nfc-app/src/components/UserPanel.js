@@ -9,7 +9,8 @@ import { BusquedaProducto } from './BusquedaProducto'
 import { ListaUsuarios } from './ListaUsuarios'
 import { ActUsuario } from './ActUsuario'
 import { logOutUsuario } from './firebaseconf';
-import { NavLink } from 'react-router-dom'
+import { BrowserRouter, NavLink, Switch, Route } from 'react-router-dom'
+import { RegistroUsuario } from './RegistroUsuario';
 
 export const UserPanel = () => {
     const [rv, setrv] = useState(false)
@@ -18,7 +19,6 @@ export const UserPanel = () => {
     const [ap, setap] = useState(false)
     const [bp, setbp] = useState(false)
     const [lu, setlu] = useState(false)
-    const [au, setau] = useState(false)
 
     const handleIterfazrv = () => {
         setrv(true)
@@ -38,9 +38,6 @@ export const UserPanel = () => {
     const handleIterfazlu = () => {
         setlu(true)
     }
-    const handleIterfazau = () => {
-        setau(true)
-    }
 
     const closeInterfaz = () => {
         setrv(false)
@@ -49,7 +46,6 @@ export const UserPanel = () => {
         setap(false)
         setbp(false)
         setlu(false)
-        setau(false)
     }
     const handleLogOut = () => {
         logOutUsuario()
@@ -107,7 +103,6 @@ export const UserPanel = () => {
                                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                     <div class="accordion-body px-0">
                                         <a onClick={handleIterfazlu} className="dropdown-item">Listado usuarios</a>
-                                        <a onClick={handleIterfazau} className="dropdown-item">Actualizar información</a>
                                     </div>
                                 </div>
                             </div>
@@ -158,12 +153,6 @@ export const UserPanel = () => {
                     <button className='btn btn-light btn-close' onClick={closeInterfaz}></button>
                 </div>
                 <ListaUsuarios />
-            </Modal>
-            <Modal className=' modal-lg' isOpen={au}>
-                <div className='d-flex bg-light justify-content-end'>
-                    <button className='btn btn-light btn-close' onClick={closeInterfaz}></button>
-                </div>
-                <ActUsuario />
             </Modal>
         </>
     )

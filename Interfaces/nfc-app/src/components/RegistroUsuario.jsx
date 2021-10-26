@@ -43,14 +43,14 @@ export const RegistroUsuario = () => {
         // console.log(estado);
         if (estado.state) {
             const usuario = {
-                id: v4(),
                 nombre,
                 apellidos,
                 email,
                 contraseña: contrasena,
                 documento,
                 fechaNacimiento: fechaNac,
-                rol: 'vendedor'
+                rol: null,
+                estado: 'pendiente'
             }
             const user = await crearUsuario(email, contrasena);
             guardarDatabase('lista-usuarios', usuario)
