@@ -109,7 +109,7 @@ export const RegistroUsuario = () => {
                                     </div>
                                 </div>
                                 <div className="row">
-                                    <div className="col-8 col-sm-4 col-md-4">
+                                    <div className="form-group">
                                         <label className="form-label col-8 fw-bold" htmlFor="fecha-nacimiento">Fecha de nacimiento</label>
                                         <input type="date" onChange={(e)=> {setFechaNac(e.target.value)}} className="form-control col-8 col-md-3" name="fecha-nacimiento" id="fecha-nacimiento" placeholder="DD/MM/AAAA" />
                                     </div>

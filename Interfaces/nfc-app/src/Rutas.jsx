@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "@firebase/auth";
 import { auth } from "./components/firebaseconf";
 import { Loading } from "./components/Loading.js";
+import { RegistroUsuario } from './components/RegistroUsuario';
 
 function Rutas() {
 

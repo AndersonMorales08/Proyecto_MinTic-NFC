@@ -2,8 +2,13 @@ import React from 'react'
 import { useState } from 'react'
 import { useHistory } from 'react-router'
 import { loginUsuario } from './firebaseconf'
+import { Link } from 'react-router-dom'
+import { RegistroUsuario } from './RegistroUsuario'
+import { Modal } from 'reactstrap';
+import { BarInicio } from './BarInicio'
 
 export const Login = () => {
+    const[state, setState] = useState(false);
     // Cuatro
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -68,10 +73,16 @@ export const Login = () => {
         setErrorPassword(null)
         history.push('/admin')
     }
+    const handleState = (e)=> {
+        e.preventDefault();
+        setState(!state);
+    }
     
 
     return (
         <>
+            {state ? <RegistroUsuario/>
+            :
             <div className="align-items-center">
                 
                 <div className="px-5" id="login">
@@ -115,11 +126,15 @@ export const Login = () => {
                                 </div>
                             )
                         }
-                        <div className="my-3 pb-3">
+                        <div className="my-3 pb-3 text-center">
                             {/* boton */}
                             <input className="btn btn-outline-dark form-control hover" href="/user" type="submit" value="Ingresar" />
+                            <Link to='/registro-usuario' onClick={handleState}>Registrarse</Link>
                         </div>
                     </form>
+                    <div>
+                        
+                    </div>
                     {/* <div className="mx-auto d-flex justify-content-center" style={{ width: 50 }}>
                             <a href="NFCRegistro.html"><img src="Sources/GoogleIcon.png" alt="Google" srcSet style={{ width: 30 }} /></a>
                         </div>
@@ -129,7 +144,7 @@ export const Login = () => {
                         <div><button onClick={handleClick}>Registrarse</button>
                         </div> */}
                 </div>
-            </div>
+            </div>}
         </>
     )
 }
