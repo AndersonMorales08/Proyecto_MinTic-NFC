@@ -26,7 +26,7 @@ export const RegProducto = () => {
         e.preventDefault();
         if (validacionCampos()) {
             const producto = {
-                idv: v4(),
+                idV: v4(),
                 cantidad: Number(cantidad),
                 modelo: modelo,
                 descripcion: descripcion,
