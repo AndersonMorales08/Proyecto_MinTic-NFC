@@ -1,6 +1,19 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import { actualizarDocumentoDatabase, consultarDatabase, consultarDocumentoDatabase, crearUsuario, datosUsuario, eliminarDocumentoDatabase, guardarDatabase, loginUsuario, logOutUsuario, usuario } from './firebaseconf';
+import { Link } from 'react-router-dom'
+import {
+
+    BrowserRouter as Router,
+    Switch,
+    Route
+} from 'react-router-dom'
+
+import { Modal } from 'reactstrap';
+
+import { ActProducto, id } from './ActProducto'
+
+
 
 export const BusquedaProducto = () => {
     // Obtener todos los documentos de la colleccion
@@ -26,7 +39,16 @@ export const BusquedaProducto = () => {
     //     console.log(listaTemporal);
     //     setListaVentas(listaTemporal)
     //   }
+    const [ap, setap] = useState(false)
+    const handleIterfazap = () => {
+        setap(true)
+    }
 
+    const closeInterfaz = () => {
+
+        setap(false)
+
+    }
     const [listaProductos, setListaProductos] = useState([])
 
     useEffect(() => {
@@ -38,10 +60,14 @@ export const BusquedaProducto = () => {
         const listaTemporal = await consultarDatabase('lista-productos')
         // console.log(listaTemporal);
         setListaProductos(listaTemporal)
+        console.log(listaTemporal)
     }
+    
     // onClick={handleCargarDatos}
 
+
     return (
+
         <>
             <div className="container-fluid bg-light rounded-3">
                 <div className="d-flex justify-content-center text-center">
@@ -58,6 +84,7 @@ export const BusquedaProducto = () => {
                             <option value={5}>Color</option>
                             <option value={6}>Mod_Motor</option>
                             <option value={7}>Id_Vehiculo</option>
+
                         </select>
                         <form className="w-50 d-flex form-group" action>
                             <input className="form-control me-2" type="search" placeholder="Escribe Aquí" aria-label="Search" />
@@ -81,6 +108,7 @@ export const BusquedaProducto = () => {
                                     <th scope="col">Color</th>
                                     <th scope="col">Mod_Motor</th>
                                     <th scope="col">Id_Vehiculo</th>
+                                    <th scope="col">Accion</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -97,7 +125,16 @@ export const BusquedaProducto = () => {
                                                 <td>{producto.codAgencia}</td>
                                                 <td>{producto.color}</td>
                                                 <td>{producto.motor}</td>
-                                                <td>{producto.id}</td>
+                                                <td>{producto.idV}</td>
+                                                {console.log(producto.id)}
+                                                <td>
+                                                <Link a onClick={handleIterfazap} className="dropdown-item" 
+                                                to={`/lista-productos/${producto.id}`}>
+                                                Editar
+                                                </Link>
+                                                    
+
+                                                </td>
                                             </tr>)
                                     })
                                 }
@@ -107,7 +144,19 @@ export const BusquedaProducto = () => {
                 </section>
             </div>
 
+            <Modal className=' modal-lg' isOpen={ap}>
+                <div className='d-flex bg-light justify-content-end'>
+                    <button onClick={closeInterfaz} className='btn btn-light btn-close'></button>
+                </div>
+                <Router>
+                    <Switch >
+                        <Route exact path="/lista-productos/:id" component={ActProducto} />
+                    </Switch>
+
+                </Router>
+            </Modal>
 
         </>
     )
+
 }
