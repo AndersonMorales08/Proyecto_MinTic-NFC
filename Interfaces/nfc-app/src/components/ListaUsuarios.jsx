@@ -35,7 +35,7 @@ export const ListaUsuarios = () => {
 
     const cargarDatos = async () => {
         // console.log('Entro..!');
-        const listaTemporal = await consultarDatabase('lista-Usuarios')
+        const listaTemporal = await consultarDatabase('lista-usuarios')
         // console.log(listaTemporal);
         setListaUsuarios(listaTemporal)
     }
