@@ -16,7 +16,6 @@ export const UserPanel = () => {
     const [rv, setrv] = useState(false)
     const [bv, setbv] = useState(false)
     const [rp, setrp] = useState(false)
-    const [ap, setap] = useState(false)
     const [bp, setbp] = useState(false)
     const [lu, setlu] = useState(false)
 
@@ -29,9 +28,7 @@ export const UserPanel = () => {
     const handleIterfazrp = () => {
         setrp(true)
     }
-    const handleIterfazap = () => {
-        setap(true)
-    }
+
     const handleIterfazbp = () => {
         setbp(true)
     }
@@ -43,7 +40,6 @@ export const UserPanel = () => {
         setrv(false)
         setbv(false)
         setrp(false)
-        setap(false)
         setbp(false)
         setlu(false)
     }
@@ -89,7 +85,6 @@ export const UserPanel = () => {
                                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                     <div class="accordion-body px-0">
                                         <a onClick={handleIterfazrp} className="dropdown-item">Registrar producto</a>
-                                        <a onClick={handleIterfazap} className="dropdown-item">Actualizar producto</a>
                                         <a onClick={handleIterfazbp} className="dropdown-item">Control productos</a>
                                     </div>
                                 </div>
@@ -136,12 +131,7 @@ export const UserPanel = () => {
                 </div>
                 <RegProducto />
             </Modal>
-            <Modal className=' modal-lg' isOpen={ap}>
-                <div className='d-flex bg-light justify-content-end'>
-                    <button onClick={closeInterfaz} className='btn btn-light btn-close'></button>
-                </div>
-                <ActProducto />
-            </Modal>
+
             <Modal className='modal-lg' isOpen={bp}>
                 <div className='d-flex bg-light justify-content-end'>
                     <button className='btn btn-light btn-close' onClick={closeInterfaz}></button>
