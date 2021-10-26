@@ -3,9 +3,7 @@
 import { Home } from './Pages/Home';
 import { UserDashBoard } from './Pages/UserDashBoard';
 import { sesionState } from './components/firebaseconf';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
-import { useState } from 'react';
-import { RegistroUsuario } from './components/RegistroUsuario';
+
 
 
 

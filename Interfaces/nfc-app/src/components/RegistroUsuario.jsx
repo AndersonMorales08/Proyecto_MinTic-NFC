@@ -22,7 +22,7 @@ export const RegistroUsuario = () => {
         if(contrasena !== confContrasena){
             return {
                 state: false,
-                mensaje: 'Los campos de CONTRASEÑA y CONFIRMACIÓN DE CONTRASEÑA tienen que concordar.'
+                mensaje: 'Las contraseñas no coinciden.'
             }
         }
         if(contrasena.split('').length < 6){
@@ -52,9 +52,7 @@ export const RegistroUsuario = () => {
                 fechaNacimiento: fechaNac,
                 rol: 'vendedor'
             }
-            console.log(usuario);
             const user = await crearUsuario(email, contrasena);
-            console.log(user);
             guardarDatabase('lista-usuarios', usuario)
             alert("El usuario se registro correctamente")
         } else {

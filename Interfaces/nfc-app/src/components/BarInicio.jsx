@@ -2,11 +2,6 @@
 import React, { useState } from 'react'
 import { Login } from './Login'
 import { Modal } from 'reactstrap';
-import { Link } from 'react-router-dom';
-import { useHistory } from 'react-router';
-import { loginUsuario } from './firebaseconf';
-import { RegistroUsuario } from './RegistroUsuario';
-import { useEffect } from 'react';
 
 
 
@@ -41,7 +36,7 @@ export const BarInicio = ({estados}) => {
                 </form>
             </div>
             <Modal isOpen={state}>
-                <div className='d-flex bg-light justify-content-end mt-3 me-3'>
+                <div className='d-flex justify-content-end mt-3 me-3'>
                     <button className='btn btn-light btn-close' onClick={handleState}></button>
                 </div>
                 <Login/>
