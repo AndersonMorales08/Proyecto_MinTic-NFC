@@ -25,7 +25,7 @@ export const RegVenta = () => {
         console.log(fechaVenta);
         if (validacionCampos()){
             const venta = {
-                id: v4(),
+                idVenta: v4(),
                 identificadorVehiculo: identificador,
                 valorTotal: Number(valorTotal),
                 cantidad: Number(cantidad),
