@@ -45,7 +45,7 @@ export const ActProducto = () => {
              descripcion,
              precio,
              fechaRegistro,
-             fechaVenta: fechaVenta,
+             fechaVenta,
              estado,
              codAgencia,
              color,
