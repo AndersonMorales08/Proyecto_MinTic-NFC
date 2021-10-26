@@ -66,7 +66,7 @@ export const Login = () => {
         setPassword('')
         setErrorEmail(null)
         setErrorPassword(null)
-        history.push('/admin')
+        history.push('/user')
     }
     
 
