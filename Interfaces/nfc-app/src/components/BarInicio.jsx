@@ -25,22 +25,19 @@ export const BarInicio = ({estados}) => {
                         <a className="nav-link" aria-current="page" href="/home">Inicio</a>
                     </li>
                     <li className="nav-item mx-sm-2">
-                        <a className="nav-link" href="#">Vehiculos</a>
-                    </li>
-                    <li className="nav-item mx-sm-2">
-                        <a className="nav-link" href="#">Nosotros</a>
+                        <a className="nav-link" href="#vehiculos">Vehiculos</a>
                     </li>
 
                     <li className="nav-item mx-sm-2">
-                        <a className="nav-link" href="#">Contacto</a>
+                        <a className="nav-link" href="#contacto">Contacto</a>
                     </li>
                     <li onClick={handleState} className="nav-item mx-sm-2">
                         <a className='nav-link'>Sign in</a>
                     </li>
                 </ul>
-                <form className="d-flex ms-sm-5 px-lg-2">
+                <form className="ms-sm-5 px-lg-2">
                     <input className="me-2 rounded" type="search" placeholder="Escribe Aquí" aria-label="Search" />
-                    <button className="btn btn-light" type="submit">Buscar</button>
+                    <button className="btn btn-light" type="button">Buscar</button>
                 </form>
             </div>
             <Modal isOpen={state}>

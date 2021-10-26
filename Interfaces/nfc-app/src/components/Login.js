@@ -71,7 +71,7 @@ export const Login = () => {
         setPassword('')
         setErrorEmail(null)
         setErrorPassword(null)
-        history.push('/admin')
+        history.push('/user')
     }
     const handleState = (e)=> {
         e.preventDefault();
@@ -85,7 +85,7 @@ export const Login = () => {
             :
             <div className="align-items-center">
                 
-                <div className="px-5" id="login">
+                <div className="px-3 my-3" id="login">
                     <div className="text-center">
                         <img src="Sources/Logonegro.png" alt="logoNFC" srcSet style={{ width: '25%' }} />
                         <h5>NFC Motors</h5>

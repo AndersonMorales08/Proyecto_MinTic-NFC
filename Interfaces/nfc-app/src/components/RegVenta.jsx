@@ -36,10 +36,10 @@ export const RegVenta = () => {
                 encargado: encargado,
                 estadoVenta: estadoVenta
             }
-            console.log(venta);
+            alert("Venta Registrada");
             guardarDatabase('lista-ventas', venta)
         } else {
-            console.log('¡Debe llenar todos los campos!');
+            alert('¡Debe llenar todos los campos!');
         }
     }
 
@@ -93,7 +93,6 @@ export const RegVenta = () => {
                                 </div>
                             </div>
                             <div className="row">
-                                {/* PARA ELIGIR LA FECHA CON UN CALENDARIO HACE FALTA EL JAVASCRIP */}
                                 <div className="col-8 col-sm-4 col-md-4">
                                     <label className="form-label col-8 fw-bold" htmlFor="fecha-inicial">Fecha de la Venta </label>
                                     <input type="date" onChange={(e)=> {setFechaVenta(e.target.value)}} className="form-control col-8 col-md-3" name="fecha" id="fecha" placeholder="DD/MM/AAAA" />
