@@ -1,6 +1,18 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import { actualizarDocumentoDatabase, consultarDatabase, consultarDocumentoDatabase, crearUsuario, datosUsuario, eliminarDocumentoDatabase, guardarDatabase, loginUsuario, logOutUsuario, usuario } from './firebaseconf';
+import { Link } from 'react-router-dom'
+import {
+
+    BrowserRouter as Router,
+    Switch,
+    Route
+} from 'react-router-dom'
+
+import { Modal } from 'reactstrap';
+
+import { ActVentas, id } from './ActVentas'
+
 
 export const BusquedaVentas = () => {
     // Obtener todos los documentos de la colleccion
@@ -40,7 +52,16 @@ export const BusquedaVentas = () => {
         setListaVentas(listaTemporal)
     }
     // onClick={handleCargarDatos}
+    const [ap, setap] = useState(false)
+    const handleIterfazap = () => {
+        setap(true)
+    }
 
+    const closeInterfaz = () => {
+
+        setap(false)
+
+    }
     return (
         <>
             <div className="bg-light">
@@ -68,10 +89,10 @@ export const BusquedaVentas = () => {
                     </div>
                 </section>
                 <div className="container table-responsive pt-4 w-100">
-                    <table className="table table-bordered table-hover  table-hover table-dark">
-                        <thead className="thead-dark">
+                    <table className="table table-bordered table-hover  table-hover table-light">
+                        <thead className="table-dark text-light">
                             <tr>
-                                <th scope="col">ID</th>
+                                <th scope="col">#</th>
                                 <th scope="col">V_Venta</th>
                                 <th scope="col">ID_Vehic</th>
                                 <th scope="col">Cantidad</th>
@@ -80,6 +101,8 @@ export const BusquedaVentas = () => {
                                 <th scope="col">Cliente</th>
                                 <th scope="col">Encargado</th>
                                 <th scope="col">Estado</th>
+                                <th scope="col">Id_Venta</th>
+                                <th scope="col">Accion</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -95,7 +118,16 @@ export const BusquedaVentas = () => {
                                             <td>{venta.fechaVenta}</td>
                                             <td>{venta.nombreCliente}</td>
                                             <td>{venta.encargado}</td>
+                                            <td>{venta.idVenta}</td>
                                             <td>{venta.estadoVenta}</td>
+                                            <td>
+                                                <Link a onClick={handleIterfazap} className="dropdown-item" 
+                                                to={`/lista-ventas/${venta.id}`}>
+                                                Editar
+                                                </Link>
+                                                    
+
+                                                </td>
                                         </tr>)
                                 })
                             }
@@ -103,6 +135,17 @@ export const BusquedaVentas = () => {
                     </table>
                 </div>
             </div>
+            <Modal className=' modal-lg' isOpen={ap}>
+                <div className='d-flex bg-light justify-content-end'>
+                    <button onClick={closeInterfaz} className='btn btn-light btn-close'></button>
+                </div>
+                <Router>
+                    <Switch >
+                        <Route exact path="/lista-ventas/:id" component={ActVentas} />
+                    </Switch>
+
+                </Router>
+            </Modal>
 
 
         </>
