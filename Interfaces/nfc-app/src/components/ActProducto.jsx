@@ -106,9 +106,16 @@ export const ActProducto = () => {
                                     setModelo(e.target.value);
                                 }}>
                                     <option value="Mod_Default">Selecciona un Modelo</option>
-                                    <option value="Sentra Sr">Sentra Sr</option>
-                                    <option value="Mazda CX-9">Mazda CX-9</option>
-                                    <option value="Chevrolet Equinox">Chevrolet Equinox</option>
+                                    <option value="Sail ls">Chevrolet Sail</option>
+                                    <option value="Spark Gt">Chevrolet Spark GT</option>
+                                    <option value="Equinox">Chevrolet Equinox</option>
+                                    <option value="Camaro SS">Chevrolet Camaro SS</option>
+                                    <option value="Silverado">Chevrolet Silverado</option>
+                                    <option value="Corvette">Chevrolet Corvette</option>
+                                    <option value="Tracker">Chevrolet Tracker</option>
+                                    <option value="Cruze">Chevrolet Cruze</option>
+                                    <option value="Cobalt">Chevrolet Cobalt</option>
+                                    <option value="Blazer">Chevrolet Blazer</option>
                                 </select>
                             </div>
                         </div>
