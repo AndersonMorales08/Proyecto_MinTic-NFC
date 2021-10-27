@@ -29,14 +29,7 @@ export const ActVentas = () => {
                 setEncargado(ventaTemp.encargado)
                 setEstadoVenta(ventaTemp.estadoVenta)
                 
-                // valorTotal: Number(valorTotal),
-                // cantidad: Number(cantidad),
-                // precioUnitario: Number(precioUnitario),
-                // documentoIdentificacion: DI,
-                // nombreCliente: nombreCliente,
-                // fechaVenta: fechaVenta, 
-                // encargado: encargado,
-                // estadoVenta: estadoVenta
+                
         }, []);
         const handleActualizarVenta = async (e) => {
             e.preventDefault()
@@ -54,7 +47,7 @@ export const ActVentas = () => {
 
    
             actualizarDocumentoDatabase('lista-ventas', id, venta)
-            history.push('/')
+            alert("La venta se actualizó correctamente")
         }
    
     return (
@@ -98,7 +91,6 @@ export const ActVentas = () => {
                                 </div>
                             </div>
                             <div className="row">
-                                {/* PARA ELIGIR LA FECHA CON UN CALENDARIO HACE FALTA EL JAVASCRIP */}
                                 <div className="col-8 col-sm-4 col-md-4">
                                     <label className="form-label col-8 fw-bold" htmlFor="fecha-inicial">Fecha de la Venta </label>
                                     <input type="date" value={fechaVenta} onChange={(e)=> {setFechaVenta(e.target.value)}} className="form-control col-8 col-md-3" name="fecha" id="fecha" placeholder="DD/MM/AAAA" />

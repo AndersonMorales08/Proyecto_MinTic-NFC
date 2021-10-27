@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react'
 import { Modal } from 'reactstrap';
 import { RegVenta } from './RegVenta'
@@ -6,16 +5,15 @@ import { BusquedaVentas } from './BusquedaVentas'
 import { RegProducto } from './RegProducto'
 import { BusquedaProducto } from './BusquedaProducto'
 import { ListaUsuarios } from './ListaUsuarios'
-import { logOutUsuario,consultarDocumentoDatabase } from './firebaseconf';
+import { logOutUsuario} from './firebaseconf';
 import { NavLink } from 'react-router-dom'
 
-export const UserPanel = () => {
+export const VendorPanel = () => {
     const [rv, setrv] = useState(false)
     const [bv, setbv] = useState(false)
     const [rp, setrp] = useState(false)
     const [bp, setbp] = useState(false)
     const [lu, setlu] = useState(false)
-    const [rol, setRol] = useState("vendedor")
 
     const handleIterfazrv = () => {
         setrv(true)
@@ -86,8 +84,8 @@ export const UserPanel = () => {
                                 </h2>
                                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                     <div class="accordion-body px-0">
-                                        <a onClick={handleIterfazrp} className="dropdown-item">Registrar producto</a>
-                                        <a onClick={handleIterfazbp} className="dropdown-item">Control productos</a>
+                                        <a onClick={handleIterfazrp} className="dropdown-item disabled">Registrar producto</a>
+                                        <a onClick={handleIterfazbp} className="dropdown-item disabled">Control productos</a>
                                     </div>
                                 </div>
                             </div>
@@ -99,7 +97,7 @@ export const UserPanel = () => {
                                 </h2>
                                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                     <div class="accordion-body px-0">
-                                        <a onClick={handleIterfazlu} className="dropdown-item">Listado usuarios</a>
+                                        <a onClick={handleIterfazlu} className="dropdown-item disabled">Listado usuarios</a>
                                     </div>
                                 </div>
                             </div>

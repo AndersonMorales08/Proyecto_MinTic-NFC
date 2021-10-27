@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
-import { actualizarDocumentoDatabase,  consultarDocumentoDatabase } from './firebaseconf';
+import { actualizarDocumentoDatabase, consultarDocumentoDatabase } from './firebaseconf';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import { UserPanel } from './UserPanel'
 
 export const ActProducto = () => {
 
     const { id } = useParams()
-    console.log(id);
     const [cantidad, setCantidad] = useState(0);
     const [modelo, setModelo] = useState('');
     const [descripcion, setDescripcion] = useState('');
@@ -18,49 +19,53 @@ export const ActProducto = () => {
     const [motor, setMotor] = useState('');
     const history = useHistory();
 
-    useEffect(async ()=>{
+    useEffect(async () => {
         const productoTemp = await consultarDocumentoDatabase('lista-productos', id)
 
-                setModelo(productoTemp.modelo)
-                setCantidad(productoTemp.cantidad)
-                setDescripcion(productoTemp.descripcion)
-                setPrecio(productoTemp.precio)
-                setFechaRegistro(productoTemp.fechaRegistro)
-                setFechaVenta(productoTemp.fechaVenta)
-                setEstado(productoTemp.estado)
-                setCodAgencia(productoTemp.codAgencia)
-                setColor(productoTemp.color)
-                setMotor(productoTemp.motor)
-            }, []);
+        setModelo(productoTemp.modelo)
+        setCantidad(productoTemp.cantidad)
+        setDescripcion(productoTemp.descripcion)
+        setPrecio(productoTemp.precio)
+        setFechaRegistro(productoTemp.fechaRegistro)
+        setFechaVenta(productoTemp.fechaVenta)
+        setEstado(productoTemp.estado)
+        setCodAgencia(productoTemp.codAgencia)
+        setColor(productoTemp.color)
+        setMotor(productoTemp.motor)
+    }, []);
+    
+    const [inter, setInter] = useState(true);
+
+    const cerrarInter = async () => {
+        setInter(false)
+    }
+
+
+    const handleActualizarProducto = async (e) => {
+        e.preventDefault()
+
+        const producto = {
+            cantidad,
+            modelo,
+            descripcion,
+            precio,
+            fechaRegistro,
+            fechaVenta,
+            estado,
+            codAgencia,
+            color,
+            motor,
+        }
+
+
+        actualizarDocumentoDatabase('lista-productos', id, producto)
+        alert("El producto se actualizó correctamente")
+        cerrarInter()
+        console.log(inter)
+    }
 
 
 
-    
-           const handleActualizarProducto = async (e) => {
-             e.preventDefault()
-    
-         const producto = {
-             cantidad,
-             modelo,
-             descripcion,
-             precio,
-             fechaRegistro,
-             fechaVenta,
-             estado,
-             codAgencia,
-             color,
-             motor,
-         }
-
-    
-         actualizarDocumentoDatabase('lista-productos', id, producto)
-         history.push('/')
-    
-    
-       }
-
-
-    
     return (
         <>
             <main>
@@ -70,32 +75,32 @@ export const ActProducto = () => {
                     </div>
                     <br />
                     <form>
-                           
+
                         <div className="w-100 d-flex pt-3">
                             <div className="w-50 pe-3 form-group">
                                 <label className="form-label fw-bold" htmlFor="cantidad">Cantidad</label>
                                 <input className="form-control" type="number" placeholder="Ingrese cantidad" id="cantidad" value={cantidad}
                                     onChange={(e) => {
-                                    setCantidad(e.target.value);
-                                    
-                                }} />
+                                        setCantidad(e.target.value);
+
+                                    }} />
                             </div>
                             <div className="w-50 ps-3">
                                 <label className="form-label col-8 fw-bold" htmlFor="Precio">Precio</label>
-                                <input className="form-control" type="number" placeholder="Ingrese el precio" id="precio"  value={precio} 
+                                <input className="form-control" type="number" placeholder="Ingrese el precio" id="precio" value={precio}
                                     onChange={(e) => {
-                                    setPrecio(e.target.value);
-                                   
-                                }} />
+                                        setPrecio(e.target.value);
+
+                                    }} />
                             </div>
                         </div>
                         <div className="w-100 pt-3 d-flex">
                             <div className="w-50 pe-3">
                                 <label className="form-label fw-bold" htmlFor="desc">Descripción</label>
                                 <div className="w-100">
-                                    <textarea className="form-control" id="desc"  value={descripcion}  onChange={(e) => {
+                                    <textarea className="form-control" id="desc" value={descripcion} onChange={(e) => {
                                         setDescripcion(e.target.value);
-                                        
+
                                     }} />
                                 </div>
                             </div>
@@ -130,9 +135,9 @@ export const ActProducto = () => {
                             <div className="w-50 ps-3">
                                 <label className="form-label fw-bold" htmlFor="dateVen">Fecha de Venta</label>
                                 <input className="form-control" type="date" placeholder="Ingrese fecha de venta" id="dateVen" value={fechaVenta}
-                                 onChange={(e) => {
-                                    setFechaVenta(e.target.value);
-                                }} />
+                                    onChange={(e) => {
+                                        setFechaVenta(e.target.value);
+                                    }} />
                             </div>
                         </div>
 
@@ -171,20 +176,27 @@ export const ActProducto = () => {
                             </div>
                             <div className="w-50 ps-3">
                                 <label className="form-label fw-bold" htmlFor="motor">Modelo del Motor</label>
-                                <input className="form-control" type="text" placeholder="ingrese modelo" id="motor" value={motor}onChange={(e) => {
+                                <input className="form-control" type="text" placeholder="ingrese modelo" id="motor" value={motor} onChange={(e) => {
                                     setMotor(e.target.value);
                                 }} />
                             </div>
                         </div>
                         <div className="text-center pt-3 pb-3 ">
-                            <button className="btn btn-dark btn-lg" onClick={handleActualizarProducto}>Actualizar</button>
+                            <Link a onClick={handleActualizarProducto} className="btn btn-dark btn-lg"
+                                to={`/user`}>
+                                Actualizar
+                            </Link>
                         </div>
                     </form>
                 </div>
             </main>
-
+            <Router>
+                <Switch >
+                    <Route exact path="/user" component={UserPanel} />
+                </Switch>
+            </Router>
 
 
         </>
     )
-                            }
+}

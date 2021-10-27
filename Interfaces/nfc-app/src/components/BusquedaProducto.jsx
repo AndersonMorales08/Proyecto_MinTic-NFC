@@ -1,12 +1,11 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { actualizarDocumentoDatabase, consultarDatabase, consultarDocumentoDatabase, crearUsuario, datosUsuario, eliminarDocumentoDatabase, guardarDatabase, loginUsuario, logOutUsuario, usuario } from './firebaseconf';
-import { Link } from 'react-router-dom'
+import { consultarDatabase } from './firebaseconf';
 import {
 
     BrowserRouter as Router,
     Switch,
-    Route
+    Route,Link
 } from 'react-router-dom'
 
 import { Modal } from 'reactstrap';
@@ -16,38 +15,14 @@ import { ActProducto, id } from './ActProducto'
 
 
 export const BusquedaProducto = () => {
-    // Obtener todos los documentos de la colleccion
-    // consultarDatabase('usuarios')
-    // console.log(await consultarDatabase('usuarios'));
-
-    // Obtener un documento id=CEqaCqjBFnI0SQKRj0tI
-    // consultarDocumentoDatabase('usuarios', 'CEqaCqjBFnI0SQKRj0tI')
-
-    // const usuarioDos = {
-    //     nombre: 'Martha',
-    //     edad: 15
-    // }
-
-    // Actualizacion documento  id=CEqaCqjBFnI0SQKRj0tI
-    // actualizarDocumentoDatabase('usuarios', 'CEqaCqjBFnI0SQKRj0tI', usuarioDos)
-
-    // Eliminar documento  id=CEqaCqjBFnI0SQKRj0tI
-    // eliminarDocumentoDatabase('usuarios', 'CEqaCqjBFnI0SQKRj0tI', usuarioDos)
-
-    // const handleCargarDatos = async () => {
-    //     const listaTemporal = await consultarDatabase('lista-Ventas')
-    //     console.log(listaTemporal);
-    //     setListaVentas(listaTemporal)
-    //   }
+    
     const [ap, setap] = useState(false)
     const handleIterfazap = () => {
         setap(true)
     }
 
     const closeInterfaz = () => {
-
         setap(false)
-
     }
     const [listaProductos, setListaProductos] = useState([])
 
@@ -56,14 +31,12 @@ export const BusquedaProducto = () => {
     }, [])
 
     const cargarDatos = async () => {
-        // console.log('Entro..!');
-        const listaTemporal = await consultarDatabase('lista-productos')
-        // console.log(listaTemporal);
+        const listaTemporal = await consultarDatabase('lista-productos');
         setListaProductos(listaTemporal)
         console.log(listaTemporal)
     }
     
-    // onClick={handleCargarDatos}
+    
 
 
     return (
@@ -145,14 +118,13 @@ export const BusquedaProducto = () => {
             </div>
 
             <Modal className=' modal-lg' isOpen={ap}>
-                <div className='d-flex bg-light justify-content-end'>
+                <div className='d-flex p-3 justify-content-end'>
                     <button onClick={closeInterfaz} className='btn btn-light btn-close'></button>
                 </div>
                 <Router>
                     <Switch >
                         <Route exact path="/lista-productos/:id" component={ActProducto} />
                     </Switch>
-
                 </Router>
             </Modal>
 

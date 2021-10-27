@@ -8,10 +8,9 @@ import { sesionState } from './components/firebaseconf';
 
 
 export function App() {
-
   function sesionControl() {
-    let nav =<Home />
-    if (sesionState == true) {
+    let nav = <Home />
+    if (sesionState === true) {
         nav = <UserDashBoard />
     }
     else {

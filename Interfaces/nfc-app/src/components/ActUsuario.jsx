@@ -33,12 +33,10 @@ export const ActUsuario = ({userId}) => {
 
     const handleEstado = (e) => {
         setEstado(e.target.value)
-        console.log(estado);
     }
 
     const handleRol = (e) => {
         setRol(e.target.value)
-        console.log(rol);
     }
 
     return (
