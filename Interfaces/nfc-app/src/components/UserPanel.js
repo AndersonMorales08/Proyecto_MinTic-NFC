@@ -108,6 +108,7 @@ export const UserPanel = () => {
                             {<NavLink
                                 className="btn btn-outline-light form-control"
                                 onClick={handleLogOut}
+                                type="submit"
                                 to="/home" >
                                 Cerrar Sesion
                             </NavLink>}

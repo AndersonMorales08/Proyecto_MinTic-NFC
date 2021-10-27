@@ -8,6 +8,7 @@ import { getFirestore } from 'firebase/firestore'
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'firebase/auth'
 // Metodos de interaccion con la base de datos
 import { addDoc, collection, getDocs, query, getDoc, doc, updateDoc, deleteDoc } from 'firebase/firestore'
+import { sesionControl } from '../App'
 
 const firebaseConfig = {
     apiKey: "AIzaSyA3WmeZZWAZz8xPCbuTWNru15kyp-OA7k8",
@@ -25,6 +26,7 @@ export const database = getFirestore();
 export const auth = getAuth();
 export let usuario;
 export var sesionState = false;
+
 
 // // Guardar base de datos
 export const guardarDatabase = async (nombreColeccion, data) => {
@@ -113,14 +115,16 @@ export const crearUsuario = async (email, password) => {
 export const loginUsuario = async (email, password) => {
     try {
         const credencialesUsuario = await signInWithEmailAndPassword(auth, email, password)
-        console.log(credencialesUsuario);
-        console.log(credencialesUsuario.user);
-        console.log(credencialesUsuario.user.uid);
+        // console.log(credencialesUsuario);
+        // console.log(credencialesUsuario.user);
+        // console.log(credencialesUsuario.user.uid);
         const user = {
             id: credencialesUsuario.user.uid,
             email: credencialesUsuario.user.email
         }
         usuario = user
+        console.log(usuario)
+
 
         return credencialesUsuario.user
     } catch (e) {
@@ -133,6 +137,7 @@ export const loginUsuario = async (email, password) => {
 export const logOutUsuario = async () => {
     try {
         const respuesta = await signOut(auth)
+        
     } catch (e) {
         throw new Error(e)
     }
@@ -143,12 +148,11 @@ export const datosUsuario = async () => {
     try {
         const user = auth.currentUser
         // console.log(user);
-
         if (user) {
             // console.log(user);
             return user
         } else {
-            console.log('datos usuario:', user);
+            // console.log('datos usuario:', user);
             return undefined
         }
 
@@ -173,19 +177,6 @@ export const consultarDocumentoEmail = async (nombreColeccion, email) => {
 }
 
 
-
-export const emailUsuario = async () => {
-    try {
-        const user = await datosUsuario()
-        const data = user.email
-        return data
-
-    } catch (e) {
-        throw new Error(e)
-    }
-}
-
-
 // el.addEventListener('click', function)
 // Usuario Activo
 onAuthStateChanged(auth, (user) => {
@@ -193,11 +184,11 @@ onAuthStateChanged(auth, (user) => {
     if (user) {
         usuario = user
         sesionState = true
-        console.log('El usuario logueado');
+        console.log('usuario logueado');
     } else {
-        console.log('El usuario ya no esta logueado');
         usuario = undefined;
         sesionState = false;
+        console.log('usuario no logueado');
     }
 
 })

@@ -3,6 +3,7 @@ import { useParams, useHistory } from 'react-router-dom'
 import { actualizarDocumentoDatabase, consultarDocumentoDatabase } from './firebaseconf';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import { UserPanel } from './UserPanel'
+import { UserDashBoard } from '../Pages/UserDashBoard';
 
 export const ActProducto = () => {
 
@@ -192,7 +193,7 @@ export const ActProducto = () => {
             </main>
             <Router>
                 <Switch >
-                    <Route exact path="/user" component={UserPanel} />
+                    <Route exact path="/user" component={UserDashBoard} />
                 </Switch>
             </Router>
 

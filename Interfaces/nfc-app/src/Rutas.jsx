@@ -22,7 +22,6 @@ function Rutas() {
                     id: dataUser.uid,
                     email: dataUser.email
                 }
-                console.log(usuario);
                 setFirebaseUser(usuario)
             } else {
                 setFirebaseUser(null)
