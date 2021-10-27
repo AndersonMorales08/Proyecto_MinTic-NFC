@@ -20,6 +20,7 @@ export const UserDashBoard = () => {
     }, []);
 
     useEffect( async () => {
+        const a = await encontrarUsuario()
         PanelRender()
     },);
 
@@ -49,7 +50,6 @@ export const UserDashBoard = () => {
 
     const PanelRender = () => {
         let panel = <UserPanel />
-
         if (rol == "Administrador") {
             panel = <UserPanel />
         }
